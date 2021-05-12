@@ -9,22 +9,24 @@ namespace TriviaXamarinApp.ViewModel
     class WelcomePageViewModel:ViewModelBase
     {
         string gameName;
-
+       
         public string GameName { get=> gameName; 
             set 
             { 
                 if (value != gameName) 
                 {
                     gameName = value;
-                    OnPropertyChanged("Text");
+                    OnPropertyChanged("GameName");
                 } 
             } 
         }
 
+
+
         public WelcomePageViewModel()
         {
             gameName = "Trivia Game";
-            ChangeButtonText = new Command(() => { GameName = "I was clicked!"; });
+            ChangeButtonText = new Command(() => { GameName = "Loading Game...."; });
         }
         public ICommand ChangeButtonText{ get; set; }
     }

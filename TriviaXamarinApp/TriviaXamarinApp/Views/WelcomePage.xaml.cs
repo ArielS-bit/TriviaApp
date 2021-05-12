@@ -17,12 +17,10 @@ namespace TriviaXamarinApp.Views
         {
             InitializeComponent();
             BindingContext = new WelcomePageViewModel();
-            //logo.Source = "ttps://i.pinimg.com/originals/78/ec/e9/78ece98404ae86f281e0c4cc35ad0dd9.jpg";
+            logo.Source = "https://images-platform.99static.com/ToOcJbuDzoa8sqctL1QMGO089kA=/200x220:1800x1820/500x500/top/smart/99designs-contests-attachments/95/95660/attachment_95660693";
+            
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
 
-        }
     }
 }
