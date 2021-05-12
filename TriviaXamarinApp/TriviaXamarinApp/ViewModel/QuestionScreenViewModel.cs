@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TriviaXamarinApp.ViewModel
 {
-    class LogInViewModel:ViewModelBase
+    class QuestionScreenViewModel:ViewModelBase
     {
         string gameName;
 
@@ -23,10 +23,10 @@ namespace TriviaXamarinApp.ViewModel
 
 
 
-        public LogInViewModel()
+        public QuestionScreenViewModel()
         {
             gameName = "Trivia Game";
-
+            
         }
     }
 }

@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel" 
+              xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel" 
              x:Class="TriviaXamarinApp.Views.WelcomePage">
-
+    
     <ContentPage.BindingContext>
         <local:WelcomePageViewModel></local:WelcomePageViewModel>
     </ContentPage.BindingContext>
+
     
-    <StackLayout x:Name="stck">
-        <Frame CornerRadius="0" Padding="24">
-            
-            <Label Text="{Binding GameName}" FontSize="40" HorizontalOptions="Center"></Label>
-            
+        <StackLayout x:Name="stck">
+            <Frame CornerRadius="0" Padding="24">
 
-        </Frame>
+                <Label Text="{Binding GameName}" FontSize="40" HorizontalOptions="Center"></Label>
 
-        <Button Text="Lets go!" Command="{Binding ChangeButtonText}"/>
-        <Image x:Name="logo" Source="" HeightRequest="1000" WidthRequest="800" />
-    </StackLayout>
+            </Frame>
+
+            <Button Text="Lets go!" Command="{Binding ChangeButtonText}" Clicked="Button_Clicked"/>
+            <Image x:Name="logo" Source="" HeightRequest="1000" WidthRequest="800" />
+        </StackLayout>
 
 </ContentPage>

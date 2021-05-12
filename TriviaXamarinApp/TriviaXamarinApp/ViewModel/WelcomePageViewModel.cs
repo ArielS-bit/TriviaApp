@@ -4,6 +4,7 @@ using System.Text;
 using Xamarin.Forms;
 using System.Windows.Input;
 
+
 namespace TriviaXamarinApp.ViewModel
 {
     class WelcomePageViewModel:ViewModelBase
@@ -26,7 +27,7 @@ namespace TriviaXamarinApp.ViewModel
         public WelcomePageViewModel()
         {
             gameName = "Trivia Game";
-            ChangeButtonText = new Command(() => { GameName = "Loading Game...."; });
+            ChangeButtonText = new Command(() => { GameName = "Loading Game....";  });
         }
         public ICommand ChangeButtonText{ get; set; }
     }

@@ -1,15 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
              x:Class="TriviaXamarinApp.Views.ChooseScreen">
+    <ContentPage.BindingContext>
+        <local:ChooseViewModel></local:ChooseViewModel>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame CornerRadius="0" Padding="24">
+
+                <Label Text="{Binding Text}" FontSize="40" HorizontalOptions="Center"></Label>
+
+            </Frame>
+
+            <Button Text="Play as a Guest" Command="{Binding DirectGuest}"/>
+            <Button Text="Log In" Command="{Binding DirectLogIn}"/>
+            <Button Text="Sign Up" Command="{Binding DirectSignUp}"/>
+        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
