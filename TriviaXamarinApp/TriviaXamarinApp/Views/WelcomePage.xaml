@@ -2,22 +2,99 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel" 
-             x:Class="TriviaXamarinApp.Views.WelcomePage">
-    
+             x:Class="TriviaXamarinApp.Views.WelcomePage"
+             BackgroundImageSource="https://images-platform.99static.com/ToOcJbuDzoa8sqctL1QMGO089kA=/200x220:1800x1820/500x500/top/smart/99designs-contests-attachments/95/95660/attachment_95660693">
+
     <ContentPage.BindingContext>
         <local:WelcomePageViewModel></local:WelcomePageViewModel>
     </ContentPage.BindingContext>
 
-    
-        <StackLayout x:Name="stck">
-            <Frame CornerRadius="0" Padding="24">
 
-                <Label Text="{Binding GameName}" FontSize="40" HorizontalOptions="Center"></Label>
+    <StackLayout x:Name="stck">
+       
+        <Label Text="{Binding GameName}" FontSize="Title"  HorizontalOptions="Center"></Label>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/><Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/><Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/><Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/> <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/><Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/> <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/><Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/> <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/><Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/>
+        <Line/> <Line/>
+        <Line/>
+       
 
-            </Frame>
+        <Button x:Name="btn" Text="Lets go!" Command="{Binding ChangeButtonText}" Opacity="0.8" BackgroundColor="White" BorderWidth="0.5" Clicked="Button_Clicked"/>
 
-            <Button Text="Lets go!" Command="{Binding ChangeButtonText}" Clicked="Button_Clicked"/>
-            <Image x:Name="logo" Source="" HeightRequest="1000" WidthRequest="800" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <!--<Image x:Name="logo" Source="" HeightRequest="700" WidthRequest="500" />-->
+        </AbsoluteLayout>
+
+    </StackLayout>
 
 </ContentPage>
