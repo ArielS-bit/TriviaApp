@@ -6,14 +6,16 @@ using TriviaXamarinApp.Models;
 using System.Threading.Tasks;
 using TriviaXamarinApp.Views;
 
+
 namespace TriviaXamarinApp
 {
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();
-            
+            //TriviaWebAPIProxy t = new TriviaWebAPIProxy("https://ramonws.azurewebsites.net/AmericanQuestions/");
             
             MainPage = new NavigationPage(new WelcomePage());
         }

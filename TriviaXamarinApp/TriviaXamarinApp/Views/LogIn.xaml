@@ -8,22 +8,21 @@
         <local:LogInViewModel></local:LogInViewModel>
     </ContentPage.BindingContext>
 
-    
 
-        
-        <StackLayout>
+    <StackLayout Padding="10" Spacing="5">
         <Entry IsReadOnly="True" Placeholder="Log In" FontSize="25" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="40" PlaceholderColor="Wheat"/>
 
-        <Entry Placeholder="Username" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
+        <Entry Placeholder="Username" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="10" WidthRequest="1" Keyboard="Chat"  PlaceholderColor="Wheat"/>
 
-        <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
+        <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="10" Keyboard="Chat"  PlaceholderColor="Wheat" IsPassword="True"/>
 
         <Label x:Name="SuccessStatus" Text="" TextColor="Black" BindingContext="{Binding SuccuessStatus}"/>
-            
-            <Button x:Name="LogInBtn" Text="Log In!" Command="{Binding ChangeStatus}" Clicked="LogInBtn_Clicked"/>
 
-            
+        <Button x:Name="LogInBtn" Text="Log In!" Command="{Binding ChangeStatus}" Margin="40" Clicked="LogInBtn_Clicked"/>
 
-        </StackLayout>
+
+        <Label x:Name="SignUp" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" Text="Don't have an acount yet?"/>
+        <Button x:Name="SignUpBtn" Text="Sign Up" Clicked="SignUpBtn_Clicked" CornerRadius="16" Margin="40" BackgroundColor="#d1ccc0"></Button>
+    </StackLayout>
    
 </ContentPage>

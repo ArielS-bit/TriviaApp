@@ -21,5 +21,10 @@ namespace TriviaXamarinApp.Views
         {
 
         }
+
+        private async void SignUpBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUp());
+        }
     }
 }
