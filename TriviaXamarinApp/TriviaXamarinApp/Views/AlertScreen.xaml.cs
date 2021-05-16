@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace TriviaXamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogIn : ContentPage
+    public partial class AlertScreen : ContentPage
     {
-        public LogIn()
+        public AlertScreen()
         {
             InitializeComponent();
-        }
-
-        private void LogInBtn_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

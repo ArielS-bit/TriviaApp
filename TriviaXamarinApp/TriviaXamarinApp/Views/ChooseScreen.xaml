@@ -2,22 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
-             x:Class="TriviaXamarinApp.Views.ChooseScreen">
+             x:Class="TriviaXamarinApp.Views.ChooseScreen"
+             Title="Intro">
     <ContentPage.BindingContext>
         <local:ChooseViewModel></local:ChooseViewModel>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout>
-            <Frame CornerRadius="0" Padding="24">
+
+            <Label HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="#487eb0">Welcome to Trivia Challenge!!!</Label>
+            <Line/>
+            <Line/>
+            <Line/>
+
+            <Frame CornerRadius="0" Padding="14">
 
                 <Label Text="{Binding Text}" FontSize="40" HorizontalOptions="Center"></Label>
 
             </Frame>
 
-            <Button Text="Play as a Guest" Command="{Binding DirectGuest}"/>
-            <Button Text="Log In" Command="{Binding DirectLogIn}"/>
-            <Button Text="Sign Up" Command="{Binding DirectSignUp}"/>
+            <Button x:Name="GuestBtn" Text="Play as a Guest" Margin="50" Clicked="GuestBtn_Clicked"/>
+            <Button x:Name="LogInBtn" Text="Log In" Margin="60" Clicked="LogInBtn_Clicked"/>
+            <Button x:Name="SignUpBtn" Text="Sign Up" Margin="70" Clicked="SignUpBtn_Clicked"/>
         
         </StackLayout>
     </ContentPage.Content>

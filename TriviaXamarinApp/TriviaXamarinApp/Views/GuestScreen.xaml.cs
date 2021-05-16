@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace TriviaXamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogIn : ContentPage
+    public partial class GuestScreen : ContentPage
     {
-        public LogIn()
+        public GuestScreen()
         {
             InitializeComponent();
         }
 
-        private void LogInBtn_Clicked(object sender, EventArgs e)
+        private async void playBtn_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new QuestionScreen());
         }
     }
 }

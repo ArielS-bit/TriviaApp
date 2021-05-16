@@ -30,5 +30,7 @@ namespace TriviaXamarinApp.ViewModel
             ChangeButtonText = new Command(() => { GameName = "Loading Game....";  });
         }
         public ICommand ChangeButtonText{ get; set; }
+
+
     }
 }

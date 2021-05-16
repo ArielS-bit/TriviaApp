@@ -1,15 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="TriviaXamarinApp.Views.LogIn">
-    <ContentPage.Content>
+             xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
+             x:Class="TriviaXamarinApp.Views.LogIn" Title="Log In" BackgroundColor="#2980b9">
+
+    <ContentPage.BindingContext>
+        <local:LogInViewModel></local:LogInViewModel>
+    </ContentPage.BindingContext>
+
+    
+
+        
         <StackLayout>
-            <Entry Placeholder="Username" FontSize="25"/>
-            <Entry Placeholder="Password" FontSize="25"/>
-            <Button Text="Log In"/>
+        <Entry IsReadOnly="True" Placeholder="Log In" FontSize="25" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="40" PlaceholderColor="Wheat"/>
+
+        <Entry Placeholder="Username" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
+
+        <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
+
+        <Label x:Name="SuccessStatus" Text="" TextColor="Black" BindingContext="{Binding SuccuessStatus}"/>
+            
+            <Button x:Name="LogInBtn" Text="Log In!" Command="{Binding ChangeStatus}" Clicked="LogInBtn_Clicked"/>
+
+            
+
         </StackLayout>
-    </ContentPage.Content>
+   
 </ContentPage>

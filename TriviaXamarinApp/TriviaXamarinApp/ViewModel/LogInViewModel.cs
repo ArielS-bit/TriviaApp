@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
+using System.Windows.Input;
+
 
 namespace TriviaXamarinApp.ViewModel
 {
     class LogInViewModel:ViewModelBase
     {
-        string gameName;
+        string succuessStatus;
 
-        public string GameName
+        public string SuccuessStatus
         {
-            get => gameName;
+            get => succuessStatus;
             set
             {
-                if (value != gameName)
+                if (value != succuessStatus)
                 {
-                    gameName = value;
-                    OnPropertyChanged("GameName");
+                    succuessStatus = value;
+                    OnPropertyChanged("SuccuessStatus");
                 }
             }
         }
@@ -25,8 +28,11 @@ namespace TriviaXamarinApp.ViewModel
 
         public LogInViewModel()
         {
-            gameName = "Trivia Game";
+            succuessStatus = "";
+            ChangeStatus = new Command(() => { succuessStatus = "SUCCESS!"; });
+
 
         }
+        public ICommand ChangeStatus { get; set; }
     }
 }

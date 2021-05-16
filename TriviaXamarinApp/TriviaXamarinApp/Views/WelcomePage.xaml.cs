@@ -24,16 +24,16 @@ namespace TriviaXamarinApp.Views
             //logo.Source = "ttps://images-platform.99static.com/ToOcJbuDzoa8sqctL1QMGO089kA=/200x220:1800x1820/500x500/top/smart/99designs-contests-attachments/95/95660/attachment_95660693";
             
             //Button
-            btn.CornerRadius = 14;
+            //btn.CornerRadius = 18;
             btn.Margin = 85;
             btn.HeightRequest = 45;
             colorBtn = ConsoleColor.Green;
         
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void btn_Clicked(object sender, EventArgs e)
         {
-            //btn.BackgroundColor = colorBtn;
+            await Navigation.PushAsync(new ChooseScreen());
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriviaXamarinApp.Views.GuestScreen" BackgroundImageSource="https://i.pinimg.com/originals/37/bf/6c/37bf6c68177b251764373cb1606505bf.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Welcome as a Guest!" FontSize="50" Margin="85"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button x:Name="playBtn" Text="I wanna play!" Clicked="playBtn_Clicked"/>
+
+            <Label TextColor="#7ed6df" Text="***After 3 questions you will have to sign up for the app!" FontSize="Caption"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

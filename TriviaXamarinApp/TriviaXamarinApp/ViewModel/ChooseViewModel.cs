@@ -28,16 +28,8 @@ namespace TriviaXamarinApp.ViewModel
         public ChooseViewModel()
         {
             text = "Choose an option";
-            DirectGuest = new Command(() => { new QuestionScreenViewModel(); });
-            DirectLogIn = new Command(() => { new LogInViewModel(); });
-            DirectSignUp = new Command(() => { new SignUpViewModel(); });
-
+           
         }
-        public ICommand DirectGuest { get; set; }
-
-        public ICommand DirectLogIn { get; set; }
-
-        public ICommand DirectSignUp { get; set; }
-
+       
     }
 }
