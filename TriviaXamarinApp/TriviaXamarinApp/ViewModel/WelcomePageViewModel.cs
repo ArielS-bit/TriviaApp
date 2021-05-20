@@ -7,19 +7,21 @@ using System.Windows.Input;
 
 namespace TriviaXamarinApp.ViewModel
 {
-    class WelcomePageViewModel:ViewModelBase
+    class WelcomePageViewModel : ViewModelBase
     {
-        string gameName;
-       
-        public string GameName { get=> gameName; 
-            set 
-            { 
-                if (value != gameName) 
+        private string gameName;
+
+        public string GameName
+        {
+            get => gameName;
+            set
+            {
+                if (value != gameName)
                 {
                     gameName = value;
                     OnPropertyChanged("GameName");
-                } 
-            } 
+                }
+            }
         }
 
 
@@ -27,9 +29,12 @@ namespace TriviaXamarinApp.ViewModel
         public WelcomePageViewModel()
         {
             gameName = "Trivia Game";
-            ChangeButtonText = new Command(() => { GameName = "Loading Game....";  });
+            ChangeButtonText = new Command(() =>
+            {
+                GameName = "Loading Game....";
+            });
         }
-        public ICommand ChangeButtonText{ get; set; }
+        public ICommand ChangeButtonText { get; set; }
 
 
     }

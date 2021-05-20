@@ -1,31 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
              x:Class="TriviaXamarinApp.Views.SignUp" Title="Sign Up">
 
+    <ContentPage.BindingContext>
+        <local:SignUpViewModel></local:SignUpViewModel>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
+        
         <ScrollView>
+            
             <StackLayout Spacing="2.5">
 
-            <Label Text="Sign Up!"
+                <Label Text="Sign Up!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+                
+
+                <Entry Placeholder="Email" FontSize="20" Opacity="0.7" Text="{Binding Email}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
+
+                <Entry Placeholder="NickName" FontSize="20" Opacity="0.7" Text="{Binding NickName}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Email" Margin="80" PlaceholderColor="Wheat"/>
+
+                <Entry Placeholder="Password" FontSize="20" Opacity="0.7" Text="{Binding Pass}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
+
+                
+                <Button x:Name="Submit" Command="{Binding SignUpCommand}" Clicked="Submit_Clicked" Text="Sign Up!" />
+
+            </StackLayout>
             
-                <Entry Placeholder="Username" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
-
-                <Entry Placeholder="Email" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Email" Margin="80" PlaceholderColor="Wheat"/>
-
-                <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
-
-                <Entry Placeholder="Phone" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Telephone" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
-
-                <Entry Placeholder="Username" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Numeric" Margin="80" PlaceholderColor="Wheat"/>
-
-                <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
-           
-
-
-        </StackLayout>
-            </ScrollView>
+        </ScrollView>
+        
     </ContentPage.Content>
+    
 </ContentPage>

@@ -8,7 +8,7 @@ namespace TriviaXamarinApp.ViewModel
 {
     class ChooseViewModel : ViewModelBase
     {
-        string text;
+        private string text;
 
         public string Text
         {
