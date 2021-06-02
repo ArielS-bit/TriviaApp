@@ -15,7 +15,7 @@ namespace TriviaXamarinApp
         public App()
         {
             InitializeComponent();
-            //TriviaWebAPIProxy t = new TriviaWebAPIProxy("https://ramonws.azurewebsites.net/AmericanQuestions/");
+            //TriviaWebAPIProxy t = new TriviaWebAPIProxy("ttps://ramonws.azurewebsites.net/AmericanQuestions/");
             
             MainPage = new NavigationPage(new WelcomePage());
         }

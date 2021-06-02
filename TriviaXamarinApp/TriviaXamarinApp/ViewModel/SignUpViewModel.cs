@@ -6,6 +6,8 @@ using System.Windows.Input;
 using TriviaXamarinApp.Models;
 using TriviaXamarinApp.Services;
 using System.Threading.Tasks;
+using TriviaXamarinApp.ViewModel;
+using TriviaXamarinApp.Views;
 
 namespace TriviaXamarinApp.ViewModel
 {
@@ -15,7 +17,7 @@ namespace TriviaXamarinApp.ViewModel
         private string email;
         private string pass;
         private List<AmericanQuestion> questions;
-        private TriviaWebAPIProxy proxyServer;
+        private TriviaWebAPIProxy proxy;
 
         public string NickName
         {
@@ -66,32 +68,39 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
+        public ICommand SignUpCommand { get; }
+        public event Action<Page> Push;
 
         public SignUpViewModel()
         {
-            proxyServer = TriviaWebAPIProxy.CreateProxy();
+            proxy = TriviaWebAPIProxy.CreateProxy();
             //command which updates all user's info using User constructor and then sends it to the RegisterUser func in Services folder
-            SignUpCommand = new Command(async () => {
-                User u = new User
-                {
-                    Email = email,
-                    Password = pass,
-                    NickName = nickName,
-                    Questions = questions
-                };
-                Task<bool> t = proxyServer.RegisterUser(u);//יש לבדוק ערך מוחזר ולעשות בדיקת קלט לכל נתון שנקלט 
-                if (t==true)
-                {
+            SignUpCommand = new Command(SignUp);
 
-                }
-
-
-
-
-            });
         }
 
-        public ICommand SignUpCommand { get; set; }
+
+        private async void SignUp()
+        {
+            bool isReturned = false;
+            User u = new User {Email=Email, Password=Pass, NickName=NickName};
+
+            isReturned = await proxy.RegisterUser(u);
+
+            if (isReturned ==false)
+            {
+                await Application.Current.MainPage.DisplayAlert("Sign In Failed!", "Invalid input", "OK");
+            }
+            else
+            {
+                Page p = new QuestionScreen();
+
+                Push?.Invoke(p);
+            }
+        }
 
     }
 }
+
+
+
