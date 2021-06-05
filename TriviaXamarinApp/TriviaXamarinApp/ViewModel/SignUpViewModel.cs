@@ -89,7 +89,8 @@ namespace TriviaXamarinApp.ViewModel
 
             if (isReturned ==false)
             {
-                await Application.Current.MainPage.DisplayAlert("Sign In Failed!", "Invalid input", "OK");
+                await Application.Current.MainPage.DisplayAlert("Sign Up Failed!", "Invalid input", "OK");
+                
             }
             else
             {

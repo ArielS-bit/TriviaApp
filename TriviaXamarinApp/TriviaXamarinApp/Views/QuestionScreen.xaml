@@ -12,16 +12,16 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-            <Button  FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
+            <!--<Button  FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
 
             <Button  FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Email" Margin="80" PlaceholderColor="Wheat"/>
 
             <Button FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
 
-            <Button FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
+            <Button FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>-->
 
             
-            <Button x:Name="Submit" Command="{Binding SignUpCommand}" Clicked="Submit_Clicked" Text="Check me!!!" />
+            <!--<Button x:Name="Submit" Command="{Binding SignUpCommand}" Clicked="Submit_Clicked" Text="Check me!!!" />-->
 
 
         </StackLayout>

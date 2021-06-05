@@ -19,9 +19,9 @@
                 HorizontalOptions="CenterAndExpand" />
                 
 
-                <Entry Placeholder="Email" FontSize="20" Opacity="0.7" Text="{Binding Email}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
+                <Entry Placeholder="Email" FontSize="20" Opacity="0.7" Text="{Binding Email}" HorizontalTextAlignment="Center" MaxLength="30" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
 
-                <Entry Placeholder="NickName" FontSize="20" Opacity="0.7" Text="{Binding NickName}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Email" Margin="80" PlaceholderColor="Wheat"/>
+                <Entry Placeholder="NickName" FontSize="20" Opacity="0.7" Text="{Binding NickName}" HorizontalTextAlignment="Center" MaxLength="30" Keyboard="Email" Margin="80" PlaceholderColor="Wheat"/>
 
                 <Entry Placeholder="Password" FontSize="20" Opacity="0.7" Text="{Binding Pass}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
 

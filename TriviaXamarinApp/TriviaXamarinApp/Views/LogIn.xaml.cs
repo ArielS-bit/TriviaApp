@@ -18,13 +18,13 @@ namespace TriviaXamarinApp.Views
             LogInViewModel l = new LogInViewModel();
             l.Push += (p) => Navigation.PushAsync(p);
             this.BindingContext = l;
-            //todo
+            
         }
 
-        private void LogInBtn_Clicked(object sender, EventArgs e)
-        {
-
-        }
+        //private async void LogInBtn_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new QuestionScreen());
+        //}
 
         private async void SignUpBtn_Clicked(object sender, EventArgs e)
         {
