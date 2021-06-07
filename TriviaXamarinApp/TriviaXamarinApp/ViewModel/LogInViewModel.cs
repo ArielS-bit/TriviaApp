@@ -66,12 +66,17 @@ namespace TriviaXamarinApp.ViewModel
             }
             else
             {
-                Page p = new QuestionScreen();
-                
-                Push?.Invoke(p);
+                ((App)App.Current).User = u;
+                Push?.Invoke(new QuestionScreen());
             }
         }
 
-       
+        public ICommand SignUpCommand => new Command(SignUp);
+        private void SignUp()
+        {
+            Push?.Invoke(new TriviaXamarinApp.Views.SignUp());
+        }
+
+
     }
 }

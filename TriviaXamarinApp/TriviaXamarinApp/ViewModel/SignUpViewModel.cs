@@ -16,7 +16,6 @@ namespace TriviaXamarinApp.ViewModel
         private string nickName;
         private string email;
         private string pass;
-        private List<AmericanQuestion> questions;
         private TriviaWebAPIProxy proxy;
 
         public string NickName
@@ -58,16 +57,6 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        //לא בטוח שנכון אולי לשים בפעולה בונה ושם לאתחל
-        public List<AmericanQuestion> Questions
-        {
-            get => questions;
-            set
-            {
-                questions = null;
-            }
-        }
-
         public ICommand SignUpCommand { get; }
         public event Action<Page> Push;
 
@@ -94,9 +83,8 @@ namespace TriviaXamarinApp.ViewModel
             }
             else
             {
-                Page p = new QuestionScreen();
-
-                Push?.Invoke(p);
+                ((App)App.Current).User = u;
+                Push?.Invoke(new QuestionScreen());
             }
         }
 

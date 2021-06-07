@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TriviaXamarinApp.Models;
+using TriviaXamarinApp.ViewModel;
 
 namespace TriviaXamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditQuestions : ContentPage
     {
-        public EditQuestions()
+        public EditQuestions(AmericanQuestion q)
         {
+            //may move here
+
             InitializeComponent();
+            EditViewModel edit = new EditViewModel(q);
+            this.BindingContext = edit;
+
+            edit.Push += (p) => Navigation.PushAsync(p);
         }
     }
 }

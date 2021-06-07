@@ -12,9 +12,38 @@ namespace TriviaXamarinApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuestionScreen : ContentPage
     {
+        private TriviaXamarinApp.ViewModel.QuestionScreenViewModel trivia;
+
         public QuestionScreen()
         {
+            trivia = new ViewModel.QuestionScreenViewModel();
+            this.BindingContext = trivia;
+            trivia.Push += (p) => Navigation.PushAsync(p);
+
+            trivia.Popup += AlertYesNo;
+            trivia.Guest += AlertLogIn;
+
             InitializeComponent();
+        }
+        
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            trivia.IsEnabled = ((App)App.Current).User != null;
+        }
+
+        public async Task<bool> AlertYesNo()
+        {
+            bool answer = await DisplayAlert("Question?", "Would you like to add a question?", "Yes", "No");
+
+            return answer;
+        }
+
+        public async Task<bool> AlertLogIn()
+        {
+            bool guest = await DisplayAlert("Alert!!", "You must log in to add a new Question", "Log In", "Continue");
+
+            return guest;
         }
     }
 }

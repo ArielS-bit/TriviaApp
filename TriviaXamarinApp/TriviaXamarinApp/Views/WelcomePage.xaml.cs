@@ -14,7 +14,6 @@ namespace TriviaXamarinApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WelcomePage : ContentPage
     {
-        ConsoleColor colorBtn;
         public WelcomePage()
         {
             InitializeComponent();
@@ -27,7 +26,7 @@ namespace TriviaXamarinApp.Views
             //btn.CornerRadius = 18;
             btn.Margin = 85;
             btn.HeightRequest = 45;
-            colorBtn = ConsoleColor.Green;
+            
         
         }
 

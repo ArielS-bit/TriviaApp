@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TriviaXamarinApp.ViewModel;
 
 namespace TriviaXamarinApp.Views
 {
@@ -14,24 +15,13 @@ namespace TriviaXamarinApp.Views
     {
         public ChooseScreen()
         {
+           
             InitializeComponent();
+            ChooseViewModel c = new ChooseViewModel();
+            this.BindingContext = c;
+            c.Push += (p) => Navigation.PushAsync(p);
         }
 
-        private async void SignUpBtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SignUp());
-        }
-
-        private async void GuestBtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new GuestScreen());
-
-        }
-
-        private async void LogInBtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new LogIn());
-
-        }
+        
     }
 }

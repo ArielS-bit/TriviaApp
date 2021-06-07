@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
+             x:Class="TriviaXamarinApp.Views.GuestEnd">
+
+    <ContentPage.BindingContext>
+        <local:GuestEndViewModel></local:GuestEndViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        
+        
+        <StackLayout>
+            <Label Text="You must be signed up to continue!!!!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Log In" Command="{Binding LogInCommand}" ></Button>
+
+            <Label Text="Don't have an account yet?! "
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+            <Button Text="Sign Up" Command="{Binding SignUpCommand}" ></Button>
+
+            <Button Text="Exit!" Command="{Binding ExitCommand}" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

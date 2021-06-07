@@ -11,17 +11,90 @@
             <Label Text="Question!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+           
+                <ScrollView>
+                    <StackLayout Spacing="10" >
 
-            <!--<Button  FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat"/>
+                        <Label Text= "{Binding QText}"
+                          BackgroundColor="LightBlue"
+                          TextColor="White" 
+                          FontSize="30" 
+                          HorizontalTextAlignment="Center"
+                          VerticalTextAlignment="Center"/>
 
-            <Button  FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Email" Margin="80" PlaceholderColor="Wheat"/>
+                        <Label HeightRequest="35" TextColor="Black" 
+                          FontSize="20" 
+                          HorizontalTextAlignment="Start"
+                          VerticalTextAlignment="Start">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text=" Submitted by: " />
+                                    <Span Text="{Binding NickName}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
-            <Button FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
+                        <Button Margin="20,0,20,0"                         
+                         TextColor="White" 
+                         Text="{Binding Answers[0]}"
+                         Font="20"
+                         Command="{Binding AnswerCommand}"
+                         CommandParameter="{Binding Answers[0]}"
+                         
+                         HorizontalOptions="FillAndExpand"/>
 
-            <Button FontSize="20" Opacity="0.7" Text="{Binding }" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>-->
+                        <Button Margin="20,0,20,0" 
+                         TextColor="White" 
+                         Text="{Binding Answers[1]}"
+                         Font="20"
+                         Command="{Binding AnswerCommand}"
+                         CommandParameter="{Binding Answers[1]}"
+                         BackgroundColor="Firebrick"
+                         HorizontalOptions="FillAndExpand"/>
 
-            
-            <!--<Button x:Name="Submit" Command="{Binding SignUpCommand}" Clicked="Submit_Clicked" Text="Check me!!!" />-->
+                        <Button Margin="20,0,20,0" 
+                         TextColor="White" 
+                         Text="{Binding Answers[2]}"
+                         Font="20"
+                         Command="{Binding AnswerCommand}"
+                         CommandParameter="{Binding Answers[2]}"
+                         BackgroundColor="SeaGreen"
+                         HorizontalOptions="FillAndExpand"/>
+
+                        <Button Margin="20,0,20,0" 
+                         TextColor="White" 
+                         Text="{Binding Answers[3]}"
+                         Font="20"
+                         Command="{Binding AnswerCommand}"
+                         CommandParameter="{Binding Answers[3]}"
+                         BackgroundColor="Red"
+                         HorizontalOptions="FillAndExpand"/>
+
+                        <Label HeightRequest="35" TextColor="Black" 
+                          FontSize="20" 
+                          HorizontalTextAlignment="Center"
+                          VerticalTextAlignment="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text=" Your score: " />
+                                    <Span Text="{Binding Counter}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Button Margin="20,10,20,0" 
+                         TextColor="White" 
+                         Text="Play"
+                         Command="{Binding PlayCommand}"
+                         BackgroundColor="blue"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="End"/>
+
+                        
+                    </StackLayout>
+                </ScrollView>
+
+
 
 
         </StackLayout>

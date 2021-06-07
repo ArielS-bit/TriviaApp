@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TriviaXamarinApp.Views.EditQuestions">
+             x:Class="TriviaXamarinApp.Views.AddQuestion">
+    
     
     <ContentPage.Content>
         <ScrollView>
@@ -9,7 +10,7 @@
 
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
-                          Text="Edit question" 
+                          Text="Add question" 
                           BackgroundColor="{StaticResource primary}"
                           TextColor="White" 
                           FontSize="40" 
@@ -20,35 +21,39 @@
                          HeightRequest="50" 
                          Placeholder="Question"
                         Text="{Binding QText}">
-                   
+                    <!--<Entry.Effects>
+                        <local:BackgroundEntryEffect />
+                    </Entry.Effects>-->
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
                         Placeholder="Correct answer"
                        Text="{Binding CorrectAnswer}">
-                    
+                    <!--<Entry.Effects>
+                        <local:BackgroundEntryEffect />
+                    </Entry.Effects>-->
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
                         Placeholder="Other answer 1"
                        Text="{Binding OtherAnswers[0]}">
-                   
+                    
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
                         Placeholder="Other answer 2"
                        Text="{Binding OtherAnswers[1]}">
-                   
+                    
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
                         Placeholder="Other answer 3"
                        Text="{Binding OtherAnswers[2]}">
-                  
+                   
                 </Entry>
 
                 <Label Text="{Binding Error}" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
@@ -56,10 +61,10 @@
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="White" 
-                         Text="Edit question"  
+                         Text="Add question"  
                          BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand"
-                        Command="{Binding EditCommand}"/>
+                        Command="{Binding AddQCommand}"/>
 
             </StackLayout>
         </ScrollView>

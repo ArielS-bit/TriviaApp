@@ -16,13 +16,11 @@
 
         <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="10" Keyboard="Chat"  PlaceholderColor="Wheat" IsPassword="True"/>
 
-       
-
         <Button x:Name="LogInBtn" Text="Log In!" Command="{Binding LoginCommand}" Margin="40" />
 
 
         <Label x:Name="SignUp" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" Text="Don't have an acount yet?"/>
-        <Button x:Name="SignUpBtn" Text="Sign Up" Clicked="SignUpBtn_Clicked" CornerRadius="16" Margin="40" BackgroundColor="#d1ccc0"></Button>
+        <Button x:Name="SignUpBtn" Text="Sign Up" Command="{Binding SignUpCommand}" CornerRadius="16" Margin="40" BackgroundColor="#d1ccc0"></Button>
     </StackLayout>
    
 </ContentPage>

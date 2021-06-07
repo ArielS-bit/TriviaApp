@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TriviaXamarinApp.ViewModel;
 
 namespace TriviaXamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AlertScreen : ContentPage
+    public partial class GuestEnd : ContentPage
     {
-        public AlertScreen()
+        public GuestEnd()
         {
             InitializeComponent();
+            GuestEndViewModel g = new GuestEndViewModel();
+            g.Push += (p) => Navigation.PushAsync(p);
+            this.BindingContext = g;
         }
+
+       
     }
 }

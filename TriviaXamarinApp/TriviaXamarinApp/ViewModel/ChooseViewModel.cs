@@ -23,13 +23,31 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-
+        public event Action<Page> Push;
 
         public ChooseViewModel()
         {
             text = "Choose an option";
            
         }
-       
+
+        public ICommand LogInCommand => new Command(LogIn);
+        private void LogIn()
+        {
+            Push?.Invoke(new TriviaXamarinApp.Views.LogIn());
+        }
+
+        public ICommand SignUpCommand => new Command(SignUp);
+        private void SignUp()
+        {
+            Push?.Invoke(new TriviaXamarinApp.Views.SignUp());
+        }
+
+        public ICommand GuestCommand => new Command(Guest);
+        private void Guest()
+        {
+            Push?.Invoke(new TriviaXamarinApp.Views.GuestScreen());
+        }
+
     }
 }

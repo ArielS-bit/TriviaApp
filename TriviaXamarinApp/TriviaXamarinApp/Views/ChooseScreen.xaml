@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
              x:Class="TriviaXamarinApp.Views.ChooseScreen"
              Title="Intro">
+    
     <ContentPage.BindingContext>
         <local:ChooseViewModel></local:ChooseViewModel>
     </ContentPage.BindingContext>
@@ -22,9 +23,9 @@
 
             </Frame>
 
-            <Button x:Name="GuestBtn" Text="Play as a Guest" Margin="50" Clicked="GuestBtn_Clicked"/>
-            <Button x:Name="LogInBtn" Text="Log In" Margin="60" Clicked="LogInBtn_Clicked"/>
-            <Button x:Name="SignUpBtn" Text="Sign Up" Margin="70" Clicked="SignUpBtn_Clicked"/>
+            <Button x:Name="GuestBtn" Text="Play as a Guest" Margin="50" Command="{Binding GuestCommand}" />
+            <Button x:Name="LogInBtn" Text="Log In" Margin="60" Command="{Binding LogInCommand}"/>
+            <Button x:Name="SignUpBtn" Text="Sign Up" Margin="70" Command="{Binding SignUpCommand}"/>
         
         </StackLayout>
     </ContentPage.Content>
