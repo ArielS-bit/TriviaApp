@@ -10,48 +10,44 @@
 
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
-                          Text="Add question" 
-                          BackgroundColor="{StaticResource primary}"
+                          Text="Add question"
+                          BackgroundColor="#44bd32"
                           TextColor="White" 
-                          FontSize="40" 
+                          FontSize="30" 
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
                 <Entry Margin="20,0,20,0" 
                          HeightRequest="50" 
-                         Placeholder="Question"
+                         Placeholder="What is your question?"
                         Text="{Binding QText}">
-                    <!--<Entry.Effects>
-                        <local:BackgroundEntryEffect />
-                    </Entry.Effects>-->
+                  
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
                         Placeholder="Correct answer"
                        Text="{Binding CorrectAnswer}">
-                    <!--<Entry.Effects>
-                        <local:BackgroundEntryEffect />
-                    </Entry.Effects>-->
+                   
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
-                        Placeholder="Other answer 1"
+                        Placeholder="Wrong answer"
                        Text="{Binding OtherAnswers[0]}">
                     
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
-                        Placeholder="Other answer 2"
+                        Placeholder="Wrong answer"
                        Text="{Binding OtherAnswers[1]}">
                     
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50"
-                        Placeholder="Other answer 3"
+                        Placeholder="Wrong answer"
                        Text="{Binding OtherAnswers[2]}">
                    
                 </Entry>
@@ -62,7 +58,7 @@
                          HeightRequest="50" 
                          TextColor="White" 
                          Text="Add question"  
-                         BackgroundColor="{StaticResource primary}"
+                         BackgroundColor="#273c75"
                          HorizontalOptions="FillAndExpand"
                         Command="{Binding AddQCommand}"/>
 

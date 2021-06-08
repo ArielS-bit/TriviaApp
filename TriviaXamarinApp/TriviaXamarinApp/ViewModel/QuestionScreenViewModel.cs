@@ -127,7 +127,14 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        
+        public ICommand MainEditorCommand => new Command(MainEditor);
+
+        private void MainEditor()
+        {
+           
+            Push?.Invoke(new TriviaXamarinApp.Views.MainEditor());
+        }
+
         public ICommand AnswerCommand => new Command<string>(Answer);
 
         private async void Answer(string s)
@@ -140,14 +147,15 @@ namespace TriviaXamarinApp.ViewModel
                 {
                     if (((App)App.Current).User == null)
                     {
-                        bool guest = await Guest();
+                        //    bool guest = await Guest();
 
-                        if (guest)
-                        {
-                            Push?.Invoke(new TriviaXamarinApp.Views.LogIn());
-                        }
-
+                        //    if (guest)
+                        //    {
                         Counter = 0;
+                        Push?.Invoke(new TriviaXamarinApp.Views.GuestEnd());
+                        //}
+
+                       
                     }
                     else
                     {
@@ -155,7 +163,7 @@ namespace TriviaXamarinApp.ViewModel
 
                         if (answer)
                         {
-                            Push?.Invoke(new TriviaXamarinApp.Views.QuestionScreen());
+                            Push?.Invoke(new TriviaXamarinApp.Views.AddQuestion());
                             Counter = 0;
                         }
                     }

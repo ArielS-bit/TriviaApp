@@ -10,7 +10,7 @@
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
                           Text="Edit question" 
-                          BackgroundColor="{StaticResource primary}"
+                          BackgroundColor="#487eb0"
                           TextColor="White" 
                           FontSize="40" 
                           HorizontalTextAlignment="Center"
@@ -57,7 +57,7 @@
                          HeightRequest="50" 
                          TextColor="White" 
                          Text="Edit question"  
-                         BackgroundColor="{StaticResource primary}"
+                         BackgroundColor="#487eb0"
                          HorizontalOptions="FillAndExpand"
                         Command="{Binding EditCommand}"/>
 
