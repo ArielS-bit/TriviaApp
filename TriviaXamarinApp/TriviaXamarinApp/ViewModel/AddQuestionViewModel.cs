@@ -15,12 +15,6 @@ namespace TriviaXamarinApp.ViewModel
 {
     class AddQuestionViewModel : ViewModelBase
     {
-        public AddQuestionViewModel()
-        {
-            OtherAnswers = new string[3];
-        }
-
-       
         public event Action<Page> Push;
 
         private string correctanswer;
@@ -108,6 +102,12 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
+        public AddQuestionViewModel()
+        {
+            OtherAnswers = new string[3];
+        }
+
+
         public ICommand AddQCommand => new Command(AddQ);
         private async void AddQ()
         {
@@ -129,7 +129,7 @@ namespace TriviaXamarinApp.ViewModel
                 bool b = await proxy.PostNewQuestion(a);
                 ((App)App.Current).User.Questions.Add(a);
 
-                Push?.Invoke(new TriviaXamarinApp.Views.QuestionScreen());
+                Push?.Invoke(new QuestionScreen());
             }
         }
         private bool NotEmpty(AmericanQuestion q)

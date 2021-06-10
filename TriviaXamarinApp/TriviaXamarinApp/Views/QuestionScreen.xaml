@@ -86,9 +86,11 @@
                     <Button Margin="20,10,20,0" 
                          TextColor="White" 
                          Text="Edit!"
-                                CornerRadius="15"
+                 
+                         CornerRadius="15"
                          Command="{Binding MainEditorCommand}"
-                         BackgroundColor="#192a56"
+                                 IsEnabled="{Binding Click}"
+                            BackgroundColor="#192a56"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="End"/>
 

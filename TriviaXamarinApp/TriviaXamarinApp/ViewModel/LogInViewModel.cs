@@ -43,22 +43,23 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        public ICommand LoginCommand { get; }
+        public ICommand LoginCommand => new Command(Login);
 
         public LogInViewModel()
         {
             proxy = TriviaWebAPIProxy.CreateProxy();
 
-            LoginCommand = new Command(Login);
+           
         }
 
         public event Action<Page> Push;
 
         private async void Login()
         {
-            User u = null;
+            
+            TriviaWebAPIProxy proxy = TriviaWebAPIProxy.CreateProxy();
 
-            u = await proxy.LoginAsync(Email, Pass);
+            User u = await proxy.LoginAsync(Email, Pass);
 
             if (u==null)
             {
@@ -74,7 +75,7 @@ namespace TriviaXamarinApp.ViewModel
         public ICommand SignUpCommand => new Command(SignUp);
         private void SignUp()
         {
-            Push?.Invoke(new TriviaXamarinApp.Views.SignUp());
+            Push?.Invoke(new SignUp());
         }
 
 

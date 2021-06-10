@@ -31,7 +31,7 @@
                          Font="16" CornerRadius="15"
                          BackgroundColor="#40739e" Command="{Binding SignUpCommand}"></Button>
 
-            <Button Text="Loser!" Margin="40,50,40,0"                         
+            <Button Text="I'm a Loser!" Margin="40,50,40,0"                         
                          TextColor="White" 
                          Font="16" CornerRadius="15"
                          BackgroundColor="#40739e" Command="{Binding ExitCommand}"></Button>

@@ -12,9 +12,9 @@
     <StackLayout Padding="10" Spacing="5">
         <Entry IsReadOnly="True" Placeholder="Log In" FontSize="25" Opacity="0.7" HorizontalTextAlignment="Center" Margin="40" PlaceholderColor="Wheat"/>
 
-        <Entry Placeholder="Email" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="30" WidthRequest="1" Keyboard="Chat"  PlaceholderColor="Wheat"/>
+        <Entry Placeholder="Email" FontSize="20" Text="{Binding Email}" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="30" WidthRequest="1" Keyboard="Chat"  PlaceholderColor="Wheat"/>
 
-        <Entry Placeholder="Password" FontSize="20" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="10" Keyboard="Chat"  PlaceholderColor="Wheat" IsPassword="True"/>
+        <Entry Placeholder="Password" FontSize="20" Text="{Binding Pass}" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="10" Keyboard="Chat"  PlaceholderColor="Wheat" IsPassword="True"/>
 
         <Button x:Name="LogInBtn" Text="Log In!" Command="{Binding LoginCommand}" Margin="40" />
 

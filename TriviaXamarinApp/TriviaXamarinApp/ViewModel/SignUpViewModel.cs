@@ -63,7 +63,6 @@ namespace TriviaXamarinApp.ViewModel
         public SignUpViewModel()
         {
             proxy = TriviaWebAPIProxy.CreateProxy();
-            //command which updates all user's info using User constructor and then sends it to the RegisterUser func in Services folder
             SignUpCommand = new Command(SignUp);
 
         }
@@ -71,20 +70,19 @@ namespace TriviaXamarinApp.ViewModel
 
         private async void SignUp()
         {
-            bool isReturned = false;
             User u = new User {Email=Email, Password=Pass, NickName=NickName};
 
-            isReturned = await proxy.RegisterUser(u);
+            bool isReturned = await proxy.RegisterUser(u);
 
             if (isReturned ==false)
             {
                 await Application.Current.MainPage.DisplayAlert("Sign Up Failed!", "Invalid input", "OK");
-                
+                Push?.Invoke(new SignUp());
             }
             else
             {
                 ((App)App.Current).User = u;
-                Push?.Invoke(new QuestionScreen());
+                //Push?.Invoke(new QuestionScreen());
             }
         }
 

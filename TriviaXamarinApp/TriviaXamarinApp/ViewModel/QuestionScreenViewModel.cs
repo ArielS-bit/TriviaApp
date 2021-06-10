@@ -22,7 +22,7 @@ namespace TriviaXamarinApp.ViewModel
         public event PopupDelegate Popup;
         public delegate Task<bool> GuestDelegate();
         public event PopupDelegate Guest;
-        
+
         public event Action<Page> Push;
 
         private string correctanswer;
@@ -127,11 +127,28 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
+        private bool click;
+        public bool Click
+        {
+            get
+            {
+                return click;
+            }
+            set
+            {
+                if (click != value)
+                {
+                    click = value;
+                    OnPropertyChanged(nameof(Click));
+                }
+            }
+        }
+
         public ICommand MainEditorCommand => new Command(MainEditor);
 
         private void MainEditor()
         {
-            Push?.Invoke(new TriviaXamarinApp.Views.MainEditor());
+            Push?.Invoke(new MainEditor());
         }
 
         public ICommand AnswerCommand => new Command<string>(Answer);
@@ -140,7 +157,12 @@ namespace TriviaXamarinApp.ViewModel
         {
             if (s == CorrectAnswer)
             {
+                
                 Counter++;
+                if (Counter % 3 != 0)
+                {
+                    Click = false;
+                }
 
                 if (Counter % 3 == 0 && counter != 0)
                 {
@@ -163,8 +185,9 @@ namespace TriviaXamarinApp.ViewModel
                         if (answer)
                         {
                             Push?.Invoke(new AddQuestion());
-                            Counter = 0;
+                            
                         }
+                        Click = true;
                     }
                 }
             }
@@ -195,6 +218,8 @@ namespace TriviaXamarinApp.ViewModel
         public QuestionScreenViewModel()
         {
             IsEnabled = ((App)App.Current).User != null;
+            Click = false;
+            Play();
         }
     }
 }

@@ -114,7 +114,7 @@ namespace TriviaXamarinApp.ViewModel
                 if (NotEmpty(newQuestion))
                 {
                     await proxy.PostNewQuestion(newQuestion);
-                    Push?.Invoke(new TriviaXamarinApp.Views.QuestionScreen());
+                    Push?.Invoke(new TriviaXamarinApp.Views.MainEditor());
                 }
             }
         }
