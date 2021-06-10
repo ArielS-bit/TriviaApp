@@ -20,6 +20,7 @@ namespace TriviaXamarinApp.Views
             ChooseViewModel c = new ChooseViewModel();
             this.BindingContext = c;
             c.Push += (p) => Navigation.PushAsync(p);
+            ((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#2c3e50");
         }
 
         

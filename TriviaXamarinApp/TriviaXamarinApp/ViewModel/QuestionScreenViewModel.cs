@@ -21,7 +21,7 @@ namespace TriviaXamarinApp.ViewModel
         public delegate Task<bool> PopupDelegate();
         public event PopupDelegate Popup;
         public delegate Task<bool> GuestDelegate();
-        public event PopupDelegate Guest;
+        
 
         public event Action<Page> Push;
 
@@ -76,19 +76,19 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        private string qtext;
-        public string QText
+        private string questionText;
+        public string QuestionText
         {
             get
             {
-                return qtext;
+                return questionText;
             }
             set
             {
-                if (qtext != value)
+                if (questionText != value)
                 {
-                    qtext = value;
-                    OnPropertyChanged(nameof(QText));
+                    questionText = value;
+                    OnPropertyChanged(nameof(QuestionText));
                 }
             }
         }
@@ -110,19 +110,19 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        private int counter;
-        public int Counter
+        private int score;
+        public int Score
         {
             get
             {
-                return counter;
+                return score;
             }
             set
             {
-                if (counter != value)
+                if (score != value)
                 {
-                    counter = value;
-                    OnPropertyChanged(nameof(Counter));
+                    score = value;
+                    OnPropertyChanged(nameof(Score));
                 }
             }
         }
@@ -144,6 +144,13 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
+        public QuestionScreenViewModel()
+        {
+            IsEnabled = ((App)App.Current).User != null;
+            Click = false;
+            Play();
+        }
+
         public ICommand MainEditorCommand => new Command(MainEditor);
 
         private void MainEditor()
@@ -157,26 +164,20 @@ namespace TriviaXamarinApp.ViewModel
         {
             if (s == CorrectAnswer)
             {
-                
-                Counter++;
-                if (Counter % 3 != 0)
+
+                Score++;
+                if (Score % 3 != 0)
                 {
                     Click = false;
                 }
 
-                if (Counter % 3 == 0 && counter != 0)
+                if (Score % 3 == 0 && score != 0)
                 {
                     if (((App)App.Current).User == null)
                     {
-                        //    bool guest = await Guest();
-
-                        //    if (guest)
-                        //    {
-                        Counter = 0;
+                        
                         Push?.Invoke(new GuestEnd());
-                        //}
-
-                       
+                        
                     }
                     else
                     {
@@ -200,10 +201,10 @@ namespace TriviaXamarinApp.ViewModel
             TriviaWebAPIProxy proxy = TriviaWebAPIProxy.CreateProxy();
 
             AmericanQuestion q = await proxy.GetRandomQuestion();
-
+            Random r = new Random();
             this.CorrectAnswer = q.CorrectAnswer;
             this.NickName = q.CreatorNickName;
-            this.QText = q.QText;
+            this.QuestionText = q.QText;
             Answers = new string[4];
 
             for (int i = 0; i < 3; i++)
@@ -212,15 +213,10 @@ namespace TriviaXamarinApp.ViewModel
             }
             Answers[3] = q.CorrectAnswer;
 
-            Random r = new Random();
+           
             Answers = Answers.OrderBy(x => r.Next()).ToArray();
         }
-        public QuestionScreenViewModel()
-        {
-            IsEnabled = ((App)App.Current).User != null;
-            Click = false;
-            Play();
-        }
+        
     }
 }
 

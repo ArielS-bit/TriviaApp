@@ -7,20 +7,20 @@
     
     <ContentPage.Content>
         
-        <StackLayout Spacing="2.5">
+        <StackLayout Spacing="3">
             
                 <ScrollView>
                     <StackLayout Spacing="10" >
 
-                        <Label Text= "{Binding QText}"
-                          BackgroundColor="LightBlue"
+                        <Label Text= "{Binding QuestionText}"
+                          BackgroundColor="#c0392b"
                           TextColor="Black" 
-                          FontSize="30" 
+                          FontSize="25" 
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
                         <Label HeightRequest="35" TextColor="Black" 
-                          FontSize="20" 
+                          FontSize="22" 
                           HorizontalTextAlignment="Start"
                           VerticalTextAlignment="Start">
                             <Label.FormattedText>
@@ -76,7 +76,7 @@
 
                         <Button Margin="20,10,20,0" 
                          TextColor="White" 
-                         Text="Let's go!"
+                         Text="I don't know the answer!"
                                 CornerRadius="15"
                          Command="{Binding PlayCommand}"
                          BackgroundColor="#192a56"
@@ -101,16 +101,13 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text=" Score: " />
-                                <Span Text="{Binding Counter}" />
+                                <Span Text="{Binding Score}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
 
                 </StackLayout>
                 </ScrollView>
-
-
-
 
         </StackLayout>
     </ContentPage.Content>

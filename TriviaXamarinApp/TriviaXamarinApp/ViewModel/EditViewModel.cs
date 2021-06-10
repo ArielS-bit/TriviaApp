@@ -20,7 +20,7 @@ namespace TriviaXamarinApp.ViewModel
 
         public EditViewModel(AmericanQuestion q)
         {
-            QText = q.QText;
+            QuestionText = q.QText;
             CorrectAnswer = q.CorrectAnswer;
             OtherAnswers = q.OtherAnswers;
             originalQuestion = q;
@@ -28,19 +28,19 @@ namespace TriviaXamarinApp.ViewModel
 
         private AmericanQuestion originalQuestion;
 
-        private string qText;
-        public string QText
+        private string questionText;
+        public string QuestionText
         {
             get
             {
-                return this.qText;
+                return this.questionText;
             }
             set
             {
-                if (this.qText != value)
+                if (this.questionText != value)
                 {
-                    this.qText = value;
-                    OnPropertyChanged(nameof(QText));
+                    this.questionText = value;
+                    OnPropertyChanged(nameof(QuestionText));
                 }
             }
         }
@@ -105,24 +105,23 @@ namespace TriviaXamarinApp.ViewModel
             {
                 AmericanQuestion newQuestion = new AmericanQuestion()
                 {
-                    QText = QText,
+                    QText = QuestionText,
                     CorrectAnswer = CorrectAnswer,
                     OtherAnswers = OtherAnswers,
                     CreatorNickName = ((App)App.Current).User.NickName
                 };
 
-                if (NotEmpty(newQuestion))
+                if (IsNotEmpty(newQuestion))
                 {
                     await proxy.PostNewQuestion(newQuestion);
-                    Push?.Invoke(new TriviaXamarinApp.Views.MainEditor());
+                    Push?.Invoke(new MainEditor());
                 }
             }
         }
 
-        private bool NotEmpty(AmericanQuestion q)
+        private bool IsNotEmpty(AmericanQuestion q)
         {
-            return (q.QText != "" && q.CorrectAnswer != "" && q.OtherAnswers[0] != "" && q.OtherAnswers[1] != ""
-                 && q.OtherAnswers[2] != "" && q.CreatorNickName != "");
+            return (q.QText != "" && q.CorrectAnswer != "" && q.OtherAnswers[0] != "" && q.OtherAnswers[1] != "" && q.OtherAnswers[2] != "" && q.CreatorNickName != "");
         }
     }
 }

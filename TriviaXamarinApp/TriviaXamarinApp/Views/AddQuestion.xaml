@@ -20,7 +20,7 @@
                 <Entry Margin="20,0,20,0" 
                          HeightRequest="50" 
                          Placeholder="What is your question?"
-                        Text="{Binding QText}">
+                        Text="{Binding QuestionText}">
                   
                 </Entry>
 
@@ -52,7 +52,7 @@
                    
                 </Entry>
 
-                <Label Text="{Binding Error}" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="{Binding Warning}" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
 
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 

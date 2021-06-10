@@ -15,6 +15,7 @@ namespace TriviaXamarinApp.ViewModel
 {
     class MainEditorViewModel:ViewModelBase
     {
+        public event Action<Page> Push;
         public MainEditorViewModel()
         {
             if (((App)App.Current).User.Questions == null)
@@ -28,12 +29,12 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        public event Action<Page> Push;
+        
 
         public ICommand EditCommand => new Command<AmericanQuestion>(Edit);
         private void Edit(AmericanQuestion q)
         {
-            Push?.Invoke(new TriviaXamarinApp.Views.EditQuestions(q));
+            Push?.Invoke(new EditQuestions(q));
         }
 
         public ICommand DeleteCommand => new Command<AmericanQuestion>(Delete);

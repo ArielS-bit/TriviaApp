@@ -82,7 +82,7 @@ namespace TriviaXamarinApp.ViewModel
             else
             {
                 ((App)App.Current).User = u;
-                //Push?.Invoke(new QuestionScreen());
+                Push?.Invoke(new LogIn());
             }
         }
 

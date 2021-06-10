@@ -16,7 +16,7 @@ namespace TriviaXamarinApp.Views
     {
         public EditQuestions(AmericanQuestion q)
         {
-            //may move here
+            
 
             InitializeComponent();
             EditViewModel edit = new EditViewModel(q);

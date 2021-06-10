@@ -10,12 +10,10 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="15">
 
             <Label HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="#487eb0">Welcome to Trivia Challenge!!!</Label>
-            <Line/>
-            <Line/>
-            <Line/>
+          
 
             <Frame CornerRadius="0" Padding="14">
 

@@ -5,7 +5,7 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="10" >
+            <StackLayout Spacing="15" >
 
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
@@ -19,7 +19,7 @@
                 <Entry Margin="20,0,20,0" 
                          HeightRequest="50" 
                          Placeholder="Question"
-                        Text="{Binding QText}">
+                        Text="{Binding QuestionText}">
                    
                 </Entry>
 

@@ -43,7 +43,7 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        public ICommand LoginCommand => new Command(Login);
+        
 
         public LogInViewModel()
         {
@@ -53,7 +53,7 @@ namespace TriviaXamarinApp.ViewModel
         }
 
         public event Action<Page> Push;
-
+        public ICommand LoginCommand => new Command(Login);
         private async void Login()
         {
             

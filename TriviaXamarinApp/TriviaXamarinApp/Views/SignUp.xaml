@@ -26,7 +26,7 @@
                 <Entry Placeholder="Password" FontSize="20" Opacity="0.7" Text="{Binding Pass}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80" PlaceholderColor="Wheat" IsPassword="True"/>
 
                 
-                <Button x:Name="Submit" Command="{Binding SignUpCommand}" Clicked="Submit_Clicked" Text="Sign Up!" />
+                <Button x:Name="Submit" Command="{Binding SignUpCommand}" Text="Sign Up!" />
 
             </StackLayout>
             

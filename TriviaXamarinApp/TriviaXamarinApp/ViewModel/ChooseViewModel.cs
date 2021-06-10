@@ -31,23 +31,25 @@ namespace TriviaXamarinApp.ViewModel
            
         }
 
-        public ICommand LogInCommand => new Command(LogIn);
-        private void LogIn()
-        {
-            Push?.Invoke(new TriviaXamarinApp.Views.LogIn());
-        }
-
-        public ICommand SignUpCommand => new Command(SignUp);
-        private void SignUp()
-        {
-            Push?.Invoke(new TriviaXamarinApp.Views.SignUp());
-        }
-
         public ICommand GuestCommand => new Command(Guest);
         private void Guest()
         {
             Push?.Invoke(new TriviaXamarinApp.Views.GuestScreen());
         }
+
+        public ICommand LogInCommand => new Command(LogIn);
+        private void LogIn()
+        {
+            Push?.Invoke(new Views.LogIn());
+        }
+
+        public ICommand SignUpCommand => new Command(SignUp);
+        private void SignUp()
+        {
+            Push?.Invoke(new Views.SignUp());
+        }
+
+       
 
     }
 }

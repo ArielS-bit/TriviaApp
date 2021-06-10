@@ -51,19 +51,19 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        private string qtext;
-        public string QText
+        private string questionText;
+        public string QuestionText
         {
             get
             {
-                return qtext;
+                return questionText;
             }
             set
             {
-                if (qtext != value)
+                if (questionText != value)
                 {
-                    qtext = value;
-                    OnPropertyChanged(nameof(QText));
+                    questionText = value;
+                    OnPropertyChanged(nameof(QuestionText));
                 }
             }
         }
@@ -85,19 +85,19 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
-        private string error;
-        public string Error
+        private string warning;
+        public string Warning
         {
             get
             {
-                return error;
+                return warning;
             }
             set
             {
-                if (error != value)
+                if (warning != value)
                 {
-                    error = value;
-                    OnPropertyChanged(nameof(Error));
+                    warning = value;
+                    OnPropertyChanged(nameof(Warning));
                 }
             }
         }
@@ -114,15 +114,15 @@ namespace TriviaXamarinApp.ViewModel
             TriviaWebAPIProxy proxy = TriviaWebAPIProxy.CreateProxy();
             AmericanQuestion a = new AmericanQuestion()
             {
-                QText = QText,
+                QText = QuestionText,
                 CreatorNickName = ((App)App.Current).User.NickName,
                 CorrectAnswer = CorrectAnswer,
                 OtherAnswers = OtherAnswers
             };
 
-            if (!NotEmpty(a))
+            if (!IsNotEmpty(a))
             {
-                Error = "You cant add empty question, please try again";
+                Warning = "You cant add empty question, please try again";
             }
             else
             {
@@ -132,10 +132,9 @@ namespace TriviaXamarinApp.ViewModel
                 Push?.Invoke(new QuestionScreen());
             }
         }
-        private bool NotEmpty(AmericanQuestion q)
+        private bool IsNotEmpty(AmericanQuestion q)
         {
-            return (q.QText != "" && q.CorrectAnswer != "" && q.OtherAnswers[0] != "" && q.OtherAnswers[1] != ""
-                 && q.OtherAnswers[2] != "" && q.CreatorNickName != "");
+            return (q.QText != "" && q.CorrectAnswer != "" && q.OtherAnswers[0] != "" && q.OtherAnswers[1] != "" && q.OtherAnswers[2] != "" && q.CreatorNickName != "");
         }
     }
 }

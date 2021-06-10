@@ -10,7 +10,7 @@ namespace TriviaXamarinApp.ViewModel
     class WelcomePageViewModel : ViewModelBase
     {
         private string gameName;
-
+        public event Action<Page> Push;
         public string GameName
         {
             get => gameName;
@@ -24,18 +24,24 @@ namespace TriviaXamarinApp.ViewModel
             }
         }
 
+       
 
 
         public WelcomePageViewModel()
         {
             gameName = "Trivia Game";
-            ChangeButtonText = new Command(() =>
-            {
-                GameName = "Loading Game....";
-            });
+           
         }
-        public ICommand ChangeButtonText { get; set; }
 
+        public ICommand ChangeCommand => new Command(PrintMove);
+
+        public void PrintMove()
+        {
+            GameName = "Loading Game....";
+            Push?.Invoke(new Views.ChooseScreen());
+        }
+
+       
 
     }
 }

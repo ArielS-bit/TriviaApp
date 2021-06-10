@@ -10,7 +10,7 @@ namespace TriviaXamarinApp.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //מפעילה event
+
         public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

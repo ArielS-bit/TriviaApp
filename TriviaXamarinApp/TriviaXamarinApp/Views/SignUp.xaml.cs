@@ -22,9 +22,6 @@ namespace TriviaXamarinApp.Views
             this.BindingContext = s;
         }
 
-        private async void Submit_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new QuestionScreen());
-        }
+       
     }
 }

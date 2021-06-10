@@ -11,7 +11,6 @@ namespace TriviaXamarinApp
 {
     public partial class App : Application
     {
-        public event Action<User> Changed;
         private User user;
         public User User
         {
