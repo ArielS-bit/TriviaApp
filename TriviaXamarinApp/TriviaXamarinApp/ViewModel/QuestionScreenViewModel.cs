@@ -131,7 +131,6 @@ namespace TriviaXamarinApp.ViewModel
 
         private void MainEditor()
         {
-           
             Push?.Invoke(new TriviaXamarinApp.Views.MainEditor());
         }
 
@@ -152,7 +151,7 @@ namespace TriviaXamarinApp.ViewModel
                         //    if (guest)
                         //    {
                         Counter = 0;
-                        Push?.Invoke(new TriviaXamarinApp.Views.GuestEnd());
+                        Push?.Invoke(new GuestEnd());
                         //}
 
                        
@@ -163,7 +162,7 @@ namespace TriviaXamarinApp.ViewModel
 
                         if (answer)
                         {
-                            Push?.Invoke(new TriviaXamarinApp.Views.AddQuestion());
+                            Push?.Invoke(new AddQuestion());
                             Counter = 0;
                         }
                     }

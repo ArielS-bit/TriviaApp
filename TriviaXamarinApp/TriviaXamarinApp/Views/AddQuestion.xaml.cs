@@ -19,7 +19,7 @@ namespace TriviaXamarinApp.Views
             this.BindingContext = addQ;
             addQ.Push += (p) => Navigation.PushAsync(p);
 
-            ((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#33FFAF");
+            ((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#2c3e50");
         }
     }
 }
