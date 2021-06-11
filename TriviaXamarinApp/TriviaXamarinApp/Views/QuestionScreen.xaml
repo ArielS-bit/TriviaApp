@@ -10,17 +10,18 @@
         <StackLayout Spacing="3">
             
                 <ScrollView>
-                    <StackLayout Spacing="10" >
+                    <StackLayout Spacing="20" >
 
                         <Label Text= "{Binding QuestionText}"
-                          BackgroundColor="#c0392b"
-                          TextColor="Black" 
-                          FontSize="25" 
+                          BackgroundColor="#e84118"
+                          TextColor="#dcdde1" 
+                          FontSize="20"
+                               Padding="20,20,20,20"
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
                         <Label HeightRequest="35" TextColor="Black" 
-                          FontSize="22" 
+                          FontSize="18" 
                           HorizontalTextAlignment="Start"
                           VerticalTextAlignment="Start">
                             <Label.FormattedText>
@@ -79,7 +80,7 @@
                          Text="I don't know the answer!"
                                 CornerRadius="15"
                          Command="{Binding PlayCommand}"
-                         BackgroundColor="#192a56"
+                         BackgroundColor="#273c75"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="End"/>
 
@@ -90,11 +91,12 @@
                          CornerRadius="15"
                          Command="{Binding MainEditorCommand}"
                                  IsEnabled="{Binding Click}"
-                            BackgroundColor="#192a56"
+                            BackgroundColor="#273c75"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="End"/>
 
-                    <Label HeightRequest="35" TextColor="Black" 
+                    <Frame CornerRadius="0" Padding="14" BackgroundColor="#e1b12c">
+                        <Label HeightRequest="35" TextColor="Black" 
                           FontSize="30" 
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="End">
@@ -105,6 +107,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
+                        </Frame>
 
                 </StackLayout>
                 </ScrollView>

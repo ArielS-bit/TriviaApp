@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              x:Name="Page"
+              x:Name="Page" BackgroundImageSource="https://lh3.googleusercontent.com/proxy/cf7i3lRG2qP59y3X0zouLfea__3k_HNaQfENQJVns7olG6L8KbJ-jHN7xpNxPeFgjCMuNPWN7izlhtnWGTfcr8KrSyo_yqmaNUPnApHrEKg6YL3n3JJ25Cav"
              x:Class="TriviaXamarinApp.Views.MainEditor">
     <ContentPage.Content>
         <StackLayout>
@@ -22,10 +22,10 @@
                             <DataTemplate>
                                 <SwipeView>
                                     <SwipeView.LeftItems>
-                                        <SwipeItem Text="Delete" BackgroundColor="#c23616" Command="{Binding Source={x:Reference QuestionsView}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding}"/>
-                                        <SwipeItem Text="Edit" BackgroundColor="#dcdde1" Command="{Binding Source={x:Reference QuestionsView}, Path=BindingContext.EditCommand}" CommandParameter="{Binding}"/>
+                                        <SwipeItem Text="Delete" BackgroundColor="#c23616" Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding}"/>
+                                        <SwipeItem Text="Edit" BackgroundColor="#dcdde1" Command="{Binding Source={x:Reference Page}, Path=BindingContext.EditCommand}" CommandParameter="{Binding}"/>
                                     </SwipeView.LeftItems>
-                                    <Grid Padding="10">
+                                    <Grid Padding="10" BackgroundColor="AliceBlue">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
@@ -33,8 +33,8 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-                                        <Label FontSize="25" FontAttributes="Italic" Grid.Column="0" Grid.Row="0"  TextColor="#487eb0" Text="{Binding QText}" />
-                                        <Label FontSize="18" Grid.Column="0" Grid.Row="1" TextColor="#487eb0" Text="{Binding CorrectAnswer}" />
+                                        <Label FontSize="25" TextDecorations="Underline" Grid.Column="0" Grid.Row="0"  TextColor="#487eb0" Text="{Binding QText}" />
+                                        <Label FontSize="18" FontAttributes="Italic" Grid.Column="0" Grid.Row="1" TextColor="#44bd32" Text="{Binding CorrectAnswer}" />
                                     </Grid>
                                 </SwipeView>
 

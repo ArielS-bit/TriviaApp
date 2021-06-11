@@ -10,20 +10,20 @@
     </ContentPage.BindingContext>
 
 
-    <StackLayout x:Name="stck">
-       
-        <Label Text="{Binding GameName}" FontSize="Title"  HorizontalOptions="Center"></Label>
+    <StackLayout x:Name="stck" Spacing="10">
+
+        <Label Text="{Binding GameName}" FontSize="30" TextColor="#bdc3c7" HorizontalOptions="Center" Margin="40,40,40,20"></Label>
 
         <RelativeLayout>
-            <Button x:Name="btn" Text="Lets go!" Command="{Binding ChangeCommand}" CornerRadius="18" Opacity="0.8" BackgroundColor="White" BorderWidth="0.5"  
+            <Button x:Name="btn" Text="Lets go!" Command="{Binding ChangeCommand}" CornerRadius="18" Opacity="0.8" BackgroundColor="#e67e22" BorderWidth="0.5"  
                     RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, 
                                                                     Property=Height, 
                                                                      Factor=0.75,
-                                                                     Constant=160}"
+                                                                     Constant=90}"
                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
                                                                      Property=Width, 
                                                                      Factor=0.75,
-                                                                     Constant=170}" />
+                                                                     Constant=110}" />
         </RelativeLayout>
 
 

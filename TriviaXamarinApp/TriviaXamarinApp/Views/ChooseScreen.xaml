@@ -3,27 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
              x:Class="TriviaXamarinApp.Views.ChooseScreen"
-             Title="Intro">
+             Title="Intro" BackgroundImageSource="https://opengameart.org/sites/default/files/background_18.png">
     
     <ContentPage.BindingContext>
         <local:ChooseViewModel></local:ChooseViewModel>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <StackLayout Spacing="15">
+        <StackLayout Spacing="30">
 
-            <Label HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="#487eb0">Welcome to Trivia Challenge!!!</Label>
-          
+            <Label HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="##ecf0f1">Welcome to Trivia Challenge!!!</Label>
 
-            <Frame CornerRadius="0" Padding="14">
 
-                <Label Text="{Binding Text}" FontSize="40" HorizontalOptions="Center"></Label>
+            <Frame CornerRadius="0" Padding="14" BackgroundColor="#16a085">
+
+                <Label Text="{Binding Text}" FontSize="33" HorizontalOptions="Center"></Label>
 
             </Frame>
 
-            <Button x:Name="GuestBtn" Text="Play as a Guest" Margin="50" Command="{Binding GuestCommand}" />
-            <Button x:Name="LogInBtn" Text="Log In" Margin="60" Command="{Binding LogInCommand}"/>
-            <Button x:Name="SignUpBtn" Text="Sign Up" Margin="70" Command="{Binding SignUpCommand}"/>
+            <Button x:Name="GuestBtn" Margin="80,10,80,0" TextColor="White" BackgroundColor="#fbc531" CornerRadius="15" FontSize="15" Text="Play as a Guest" Command="{Binding GuestCommand}" />
+            <Button x:Name="LogInBtn" Margin="80,10,80,0" TextColor="White" BackgroundColor="#fbc531" CornerRadius="15" FontSize="15" Text="Log In" Command="{Binding LogInCommand}"/>
+            <Button x:Name="SignUpBtn" Margin="80,10,80,0" TextColor="White" BackgroundColor="#fbc531" CornerRadius="15" FontSize="15" Text="Sign Up" Command="{Binding SignUpCommand}"/>
         
         </StackLayout>
     </ContentPage.Content>

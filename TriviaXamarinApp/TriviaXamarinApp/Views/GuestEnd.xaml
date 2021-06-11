@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
-             x:Class="TriviaXamarinApp.Views.GuestEnd" Title="Alert!" BackgroundImageSource="http://www.theappguruz.com/app/uploads/2015/06/draw-more-few-cloud.png">
+             x:Class="TriviaXamarinApp.Views.GuestEnd" Title="Alert!" BackgroundImageSource="https://cdnb.artstation.com/p/assets/covers/images/007/382/599/large/nastya-friday-game-background-2.jpg?1505759911">
 
     <ContentPage.BindingContext>
         <local:GuestEndViewModel></local:GuestEndViewModel>
@@ -11,27 +11,27 @@
     <ContentPage.Content>
 
 
-        <StackLayout>
-            <Label Text="You must be signed up to continue!!!!"
-               HeightRequest="35" TextColor="Black" 
-                          FontSize="20" 
+        <StackLayout Spacing="30">
+            <Label Text="You must be logged in to continue!!!!"
+               HeightRequest="35" TextColor="#ecf0f1" 
+                          FontSize="20" Margin="20"
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Start" />
 
-            <Button Text="Log In" Margin="40,0,40,0"                         
+            <Button Text="Log In" Margin="80,-30,80,0"                         
                          TextColor="White" 
                          Font="16" CornerRadius="15"
                          BackgroundColor="#40739e" Command="{Binding LogInCommand}"></Button>
 
-            <Label Text="Don't have an account yet?! " HorizontalOptions="Center" FontSize="18"/>
+            <Label Text="Don't have an account yet?!" TextColor="#c0392b" Margin="40,40,40,0" HorizontalOptions="Center" FontSize="20"/>
 
 
-            <Button Text="Sign Up" Margin="40,0,40,0"                         
+            <Button Text="Sign Up" Margin="80,0,80,0"                         
                          TextColor="White" 
                          Font="16" CornerRadius="15"
                          BackgroundColor="#40739e" Command="{Binding SignUpCommand}"></Button>
 
-            <Button Text="I'm a Loser!" Margin="40,50,40,0"                         
+            <Button Text="I'm a Loser!" Margin="80,80,80,0"                         
                          TextColor="White" 
                          Font="16" CornerRadius="15"
                          BackgroundColor="#40739e" Command="{Binding ExitCommand}"></Button>

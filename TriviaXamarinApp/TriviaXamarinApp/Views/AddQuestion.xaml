@@ -1,30 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TriviaXamarinApp.Views.AddQuestion">
+             x:Class="TriviaXamarinApp.Views.AddQuestion" BackgroundImageSource="https://i.pinimg.com/originals/aa/9b/b7/aa9bb7ffc6d502e9112ec8c7e9350175.png">
     
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="10" >
+            <StackLayout Spacing="20" >
 
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
-                          Text="Add question"
+                          Text="Add your question below"
                           BackgroundColor="#44bd32"
                           TextColor="White" 
                           FontSize="30" 
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
-                <Entry Margin="20,0,20,0" 
-                         HeightRequest="50" 
-                         Placeholder="What is your question?"
-                        Text="{Binding QuestionText}">
+                <Entry Margin="20,0,20,0" Text="{Binding QuestionText}"
+                         HeightRequest="50" PlaceholderColor="#44bd32"
+                         Placeholder="What is your question?">
                   
                 </Entry>
 
-                <Entry Margin="20,0,20,0" 
+                <Entry Margin="20,0,20,0" PlaceholderColor="#0fbcf9"
                         HeightRequest="50"
                         Placeholder="Correct answer"
                        Text="{Binding CorrectAnswer}">
@@ -32,35 +31,37 @@
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
-                        HeightRequest="50"
+                        HeightRequest="50" PlaceholderColor="#e84118"
                         Placeholder="Wrong answer"
                        Text="{Binding OtherAnswers[0]}">
                     
                 </Entry>
 
-                <Entry Margin="20,0,20,0" 
+                <Entry Margin="20,0,20,0" PlaceholderColor="#e84118"
                         HeightRequest="50"
                         Placeholder="Wrong answer"
                        Text="{Binding OtherAnswers[1]}">
                     
                 </Entry>
 
-                <Entry Margin="20,0,20,0" 
+                <Entry Margin="20,0,20,0" PlaceholderColor="#e84118"
                         HeightRequest="50"
                         Placeholder="Wrong answer"
                        Text="{Binding OtherAnswers[2]}">
                    
                 </Entry>
 
-                <Label Text="{Binding Warning}" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
+                
 
-                <Button Margin="20,0,20,0" 
-                         HeightRequest="50" 
+                <Button Margin="60,0,60,0" 
+                         CornerRadius="15" 
                          TextColor="White" 
                          Text="Add question"  
                          BackgroundColor="#273c75"
                          HorizontalOptions="FillAndExpand"
                         Command="{Binding AddQCommand}"/>
+
+                <Label Text="{Binding Warning}" TextColor="Red" FontSize="40" HorizontalOptions="CenterAndExpand"/>
 
             </StackLayout>
         </ScrollView>
