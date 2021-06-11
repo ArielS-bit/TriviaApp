@@ -107,7 +107,6 @@ namespace TriviaXamarinApp.ViewModel
             OtherAnswers = new string[3];
         }
 
-
         public ICommand AddQCommand => new Command(AddQ);
         private async void AddQ()
         {

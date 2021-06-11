@@ -11,7 +11,7 @@ using TriviaXamarinApp.Views;
 
 namespace TriviaXamarinApp.ViewModel
 {
-    class GuestEndViewModel:ViewModelBase
+    class GuestEndViewModel : ViewModelBase
     {
         public event Action<Page> Push;
         public ICommand SignUpCommand => new Command(SignUp);
@@ -32,8 +32,6 @@ namespace TriviaXamarinApp.ViewModel
             System.Environment.Exit(0);
         }
 
-       
     }
 
-    
 }

@@ -10,7 +10,7 @@ using TriviaXamarinApp.Models;
 
 namespace TriviaXamarinApp.ViewModel
 {
-    class GuestScreenViewModel:ViewModelBase
+    class GuestScreenViewModel : ViewModelBase
     {
         public ICommand PlayCommand => new Command(Play);
         private void Play()
@@ -19,7 +19,6 @@ namespace TriviaXamarinApp.ViewModel
         }
 
         public event Action<Page> Push;
-
 
     }
 }

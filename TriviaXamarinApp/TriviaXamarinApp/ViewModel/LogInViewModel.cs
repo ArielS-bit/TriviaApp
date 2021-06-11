@@ -49,7 +49,6 @@ namespace TriviaXamarinApp.ViewModel
         {
             proxy = TriviaWebAPIProxy.CreateProxy();
 
-           
         }
 
         public event Action<Page> Push;
@@ -77,7 +76,6 @@ namespace TriviaXamarinApp.ViewModel
         {
             Push?.Invoke(new SignUp());
         }
-
 
     }
 }

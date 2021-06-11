@@ -15,11 +15,11 @@ namespace TriviaXamarinApp.Views
         public AddQuestion()
         {
             InitializeComponent();
+
             TriviaXamarinApp.ViewModel.AddQuestionViewModel addQ = new ViewModel.AddQuestionViewModel();
             this.BindingContext = addQ;
             addQ.Push += (p) => Navigation.PushAsync(p);
 
-            
         }
     }
 }

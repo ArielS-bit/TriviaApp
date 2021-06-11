@@ -23,7 +23,6 @@ namespace TriviaXamarinApp.Views
 
             t.Popup += Alert;
             
-
             InitializeComponent();
         }
         
@@ -36,7 +35,6 @@ namespace TriviaXamarinApp.Views
         public async Task<bool> Alert()
         {
             bool answer = await DisplayAlert("Add Question", "Would you like to add a question into our DB?", "Indeed", "Nope");
-
             return answer;
         }
 

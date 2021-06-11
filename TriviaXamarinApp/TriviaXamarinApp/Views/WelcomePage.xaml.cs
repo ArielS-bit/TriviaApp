@@ -17,6 +17,7 @@ namespace TriviaXamarinApp.Views
         public WelcomePage()
         {
             InitializeComponent();
+
             WelcomePageViewModel w = new WelcomePageViewModel();
             w.Push += (p) => Navigation.PushAsync(p);
             this.BindingContext = w;

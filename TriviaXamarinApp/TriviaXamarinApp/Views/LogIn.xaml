@@ -10,26 +10,26 @@
 
 
     <StackLayout Padding="10" Spacing="5">
+
         <Label Text="Log In" FontSize="25" TextColor="#f5f6fa" HorizontalTextAlignment="Center" Margin="40"/>
 
-
         <Frame CornerRadius="0" Padding="28" Margin="-10" BackgroundColor="#4cd137">
+
             <Entry Placeholder="Email" FontSize="20" Text="{Binding Email}" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="30" WidthRequest="1" Keyboard="Chat"  PlaceholderColor="Wheat"/>
+
         </Frame>
         <Frame CornerRadius="0" Padding="20" Margin="-10" BackgroundColor="#4cd137">
 
             <Entry Placeholder="Password" FontSize="20" Text="{Binding Pass}" Opacity="0.7" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" MaxLength="10" Keyboard="Chat"  PlaceholderColor="Wheat" IsPassword="True"/>
+
         </Frame>
 
-        <Button x:Name="LogInBtn" Text="Log In!" Margin="110,30,110,0" 
-                         TextColor="White" 
-                         BackgroundColor="#4bcffa"
-                         Font="16"
-                            CornerRadius="15" Command="{Binding LoginCommand}" />
-
+        <Button x:Name="LogInBtn" Text="Log In!" Margin="110,30,110,0" TextColor="White" BackgroundColor="#4bcffa" Font="16" CornerRadius="15" Command="{Binding LoginCommand}" />
 
         <Label x:Name="SignUp" HorizontalOptions="CenterAndExpand" Margin="20,70,0,0" TextColor="#b33939" FontSize="20" Text="Don't have an acount yet?"/>
+
         <Button x:Name="SignUpBtn" Margin="110,30,110,0" TextColor="White" BackgroundColor="#4bcffa" Font="16" CornerRadius="15" Text="Sign Up" Command="{Binding SignUpCommand}"></Button>
+
     </StackLayout>
-   
+
 </ContentPage>

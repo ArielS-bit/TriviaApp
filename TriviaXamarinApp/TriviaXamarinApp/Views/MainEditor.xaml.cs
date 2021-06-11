@@ -16,6 +16,7 @@ namespace TriviaXamarinApp.Views
         public MainEditor()
         {
             InitializeComponent();
+
             MainEditorViewModel m = new MainEditorViewModel();
             this.BindingContext = m;
             m.Push += (p) => Navigation.PushAsync(p);

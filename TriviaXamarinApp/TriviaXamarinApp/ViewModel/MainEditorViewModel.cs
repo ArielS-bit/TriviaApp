@@ -41,17 +41,19 @@ namespace TriviaXamarinApp.ViewModel
         private async void Delete(AmericanQuestion q)
         {
             TriviaWebAPIProxy proxy = TriviaWebAPIProxy.CreateProxy();
+
             bool worked = await proxy.DeleteQuestion(q);
             if (worked)
             {
                 ((App)App.Current).User.Questions.Remove(q);
                 Questions.Remove(q);
-              
             }
         }
 
         public ObservableCollection<AmericanQuestion> Questions { get; set; }
+
         public ICommand DeleteQuestionCommand => new Command<AmericanQuestion>(DeleteQuestion);
+
         private async void DeleteQuestion(AmericanQuestion a)
         {
             TriviaWebAPIProxy proxy = TriviaWebAPIProxy.CreateProxy();

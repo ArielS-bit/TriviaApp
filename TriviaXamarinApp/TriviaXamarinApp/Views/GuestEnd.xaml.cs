@@ -16,6 +16,7 @@ namespace TriviaXamarinApp.Views
         public GuestEnd()
         {
             InitializeComponent();
+
             GuestEndViewModel g = new GuestEndViewModel();
             g.Push += (p) => Navigation.PushAsync(p);
             this.BindingContext = g;

@@ -9,7 +9,6 @@ namespace TriviaXamarinApp.ViewModel
     class ChooseViewModel : ViewModelBase
     {
         private string text;
-
         public string Text
         {
             get => text;
@@ -28,7 +27,7 @@ namespace TriviaXamarinApp.ViewModel
         public ChooseViewModel()
         {
             text = "Choose an option";
-           
+
         }
 
         public ICommand GuestCommand => new Command(Guest);
@@ -48,8 +47,6 @@ namespace TriviaXamarinApp.ViewModel
         {
             Push?.Invoke(new Views.SignUp());
         }
-
-       
 
     }
 }

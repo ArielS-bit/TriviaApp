@@ -17,11 +17,9 @@ namespace TriviaXamarinApp.ViewModel
 {
     class QuestionScreenViewModel : ViewModelBase
     {
-
         public delegate Task<bool> PopupDelegate();
         public event PopupDelegate Popup;
         public delegate Task<bool> GuestDelegate();
-        
 
         public event Action<Page> Push;
 
@@ -164,20 +162,17 @@ namespace TriviaXamarinApp.ViewModel
         {
             if (s == CorrectAnswer)
             {
-
                 Score++;
                 if (Score % 3 != 0)
                 {
                     Click = false;
                 }
-
                 if (Score % 3 == 0 && score != 0)
                 {
                     if (((App)App.Current).User == null)
                     {
-                        
+
                         Push?.Invoke(new GuestEnd());
-                        
                     }
                     else
                     {
@@ -186,7 +181,6 @@ namespace TriviaXamarinApp.ViewModel
                         if (answer)
                         {
                             Push?.Invoke(new AddQuestion());
-                            
                         }
                         Click = true;
                     }
@@ -213,10 +207,8 @@ namespace TriviaXamarinApp.ViewModel
             }
             Answers[3] = q.CorrectAnswer;
 
-           
             Answers = Answers.OrderBy(x => r.Next()).ToArray();
         }
-        
     }
 }
 

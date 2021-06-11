@@ -2,71 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundImageSource="https://static.vecteezy.com/system/resources/thumbnails/000/538/717/small_2x/clound_sky_bg-01.jpg"
              x:Class="TriviaXamarinApp.Views.EditQuestions">
-    
+
     <ContentPage.Content>
+
         <ScrollView>
-            <StackLayout Spacing="15" >
 
-                <Label HeightRequest="110"  
-                          HorizontalOptions="FillAndExpand" 
-                          Text="Edit your question" 
-                          BackgroundColor="#487eb0"
-                          TextColor="White" 
-                          FontSize="40" 
-                          HorizontalTextAlignment="Center"
-                          VerticalTextAlignment="Center"/>
+            <StackLayout Spacing="15">
+
+                <Label HeightRequest="110" HorizontalOptions="FillAndExpand" Text="Edit your question" BackgroundColor="#487eb0" TextColor="White" FontSize="40" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
                 <Frame CornerRadius="10" Padding="5" Margin="20,10" BackgroundColor="#1289A7">
-                    <Entry Margin="20,0,20,0" TextColor="White"
-                         HeightRequest="50" 
-                         Placeholder="Question"
-                        Text="{Binding QuestionText}">
 
-                    </Entry>
+                    <Entry Margin="20,0,20,0" TextColor="White" HeightRequest="50" Placeholder="Question" Text="{Binding QuestionText}"> </Entry>
+
                 </Frame>
+
                 <Frame CornerRadius="0" Padding="5" Margin="20,-32" BackgroundColor="#1289A7">
-                    <Entry Margin="20,0,20,0" TextColor="#44bd32"
-                        HeightRequest="50"
-                        Placeholder="Correct answer"
-                       Text="{Binding CorrectAnswer}">
 
-                    </Entry>
+                    <Entry Margin="20,0,20,0" TextColor="#44bd32" HeightRequest="50" Placeholder="Correct answer" Text="{Binding CorrectAnswer}">  </Entry>
+
                 </Frame>
-                <Frame CornerRadius="0" Padding="5" Margin="20,6" BackgroundColor="#1289A7">
-                        <Entry Margin="20,0,20,0" TextColor="#EA2027"
-                        HeightRequest="50"
-                        Placeholder="Other answer 1"
-                       Text="{Binding OtherAnswers[0]}">
 
-                    </Entry>
+                <Frame CornerRadius="0" Padding="5" Margin="20,6" BackgroundColor="#1289A7">
+
+                    <Entry Margin="20,0,20,0" TextColor="#EA2027" HeightRequest="50" Placeholder="Other answer 1" Text="{Binding OtherAnswers[0]}"> </Entry>
+
                 </Frame>
 
                 <Frame CornerRadius="0" Padding="5" Margin="20,-22" BackgroundColor="#1289A7">
-                    <Entry Margin="20,0,20,0" TextColor="#EA2027" 
-                        HeightRequest="50"
-                        Placeholder="Other answer 2"
-                       Text="{Binding OtherAnswers[1]}">
 
-                    </Entry>
+                    <Entry Margin="20,0,20,0" TextColor="#EA2027" HeightRequest="50" Placeholder="Other answer 2" Text="{Binding OtherAnswers[1]}"> </Entry>
+
                 </Frame>
+
                 <Frame CornerRadius="10" Padding="5" Margin="20,0" BackgroundColor="#1289A7">
-                    <Entry Margin="20,0,20,0" TextColor="#EA2027" 
-                        HeightRequest="50"
-                        Placeholder="Other answer 3"
-                       Text="{Binding OtherAnswers[2]}">
 
-                    </Entry>
+                    <Entry Margin="20,0,20,0" TextColor="#EA2027" HeightRequest="50" Placeholder="Other answer 3" Text="{Binding OtherAnswers[2]}"> </Entry>
+
                 </Frame>
+
                 <Label Text="{Binding Error}" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
 
-                <Button Margin="55,0,55,0" 
-                         CornerRadius="15" 
-                         TextColor="White" 
-                         Text="Edit question"  
-                         BackgroundColor="#487eb0"
-                         HorizontalOptions="FillAndExpand"
-                        Command="{Binding EditCommand}"/>
+                <Button Margin="55,0,55,0" CornerRadius="15" TextColor="White" Text="Edit question" BackgroundColor="#487eb0" HorizontalOptions="FillAndExpand" Command="{Binding EditCommand}"/>
 
             </StackLayout>
+
         </ScrollView>
+
     </ContentPage.Content>
+
 </ContentPage>

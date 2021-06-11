@@ -3,23 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel"
              x:Class="TriviaXamarinApp.Views.GuestScreen" BackgroundImageSource="https://thumbs.dreamstime.com/b/forest-game-background-d-application-vector-design-tileable-horizontally-size-ready-parallax-effect-73706218.jpg">
-    
+
     <ContentPage.BindingContext>
         <local:GuestScreenViewModel></local:GuestScreenViewModel>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
+
         <StackLayout>
 
             <Label Text="Welcome Guest!" FontSize="30" Margin="20,100,20,20"
                 
                 HorizontalOptions="Center" />
 
-            <Button x:Name="playBtn" Margin="80,380,80,0" Opacity="0.9" TextColor="White" 
-                         CornerRadius="15"
-                         BackgroundColor="#192a56" Text="I wanna play!" Command="{Binding PlayCommand}"/>
+            <Button x:Name="playBtn" Margin="80,380,80,0" Opacity="0.9" TextColor="White" CornerRadius="15" BackgroundColor="#192a56" Text="I wanna play!" Command="{Binding PlayCommand}"/>
 
             <Label TextColor="#e1b12c" Margin="10,60,5,0" Text="***After 3 questions you will have to sign up for the app!" FontSize="15"/>
+
         </StackLayout>
+
     </ContentPage.Content>
+
 </ContentPage>

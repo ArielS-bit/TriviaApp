@@ -58,6 +58,7 @@ namespace TriviaXamarinApp.ViewModel
         }
 
         public ICommand SignUpCommand { get; }
+
         public event Action<Page> Push;
 
         public SignUpViewModel()
@@ -66,7 +67,6 @@ namespace TriviaXamarinApp.ViewModel
             SignUpCommand = new Command(SignUp);
 
         }
-
 
         private async void SignUp()
         {
@@ -85,7 +85,6 @@ namespace TriviaXamarinApp.ViewModel
                 Push?.Invoke(new LogIn());
             }
         }
-
     }
 }
 

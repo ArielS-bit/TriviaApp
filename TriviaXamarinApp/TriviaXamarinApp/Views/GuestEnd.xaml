@@ -10,8 +10,8 @@
 
     <ContentPage.Content>
 
-
         <StackLayout Spacing="30">
+            
             <Label Text="You must be logged in to continue!!!!"
                HeightRequest="35" TextColor="#ecf0f1" 
                           FontSize="20" Margin="20"
@@ -35,6 +35,9 @@
                          TextColor="White" 
                          Font="16" CornerRadius="15"
                          BackgroundColor="#40739e" Command="{Binding ExitCommand}"></Button>
+            
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>

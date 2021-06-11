@@ -4,114 +4,69 @@
              xmlns:local="clr-namespace:TriviaXamarinApp.ViewModel" Title="Trivia!"
              BackgroundImageSource="https://st2.depositphotos.com/3759469/6798/v/600/depositphotos_67982979-stock-illustration-horizontally-seamless-game-background.jpg"
              x:Class="TriviaXamarinApp.Views.QuestionScreen">
-    
+
     <ContentPage.Content>
-        
+
         <StackLayout Spacing="3">
-            
-                <ScrollView>
-                    <StackLayout Spacing="20" >
 
-                        <Label Text= "{Binding QuestionText}"
-                          BackgroundColor="#e84118"
-                          TextColor="#dcdde1" 
-                          FontSize="20"
-                               Padding="20,20,20,20"
-                          HorizontalTextAlignment="Center"
-                          VerticalTextAlignment="Center"/>
+            <ScrollView>
 
-                        <Label HeightRequest="35" TextColor="Black" 
-                          FontSize="18" 
-                          HorizontalTextAlignment="Start"
-                          VerticalTextAlignment="Start">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span Text=" Created By: " />
+                <StackLayout Spacing="20" >
+
+                    <Label Text= "{Binding QuestionText}" BackgroundColor="#e84118" TextColor="#dcdde1" FontSize="20" Padding="20,20,20,20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                    <Label HeightRequest="35" TextColor="Black" FontSize="18" HorizontalTextAlignment="Start" VerticalTextAlignment="Start">
+                        
+                        <Label.FormattedText>
+
+                            <FormattedString>
+
+                                <Span Text=" Created By: " />
                                 <Span Text="{Binding NickName}" TextColor="#fbc531" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
 
-                    <Button Margin="40,0,40,0"                         
-                         TextColor="White" 
-                         Text="{Binding Answers[0]}"
-                         Font="16"
-                            CornerRadius="15"
-                         Command="{Binding AnswerCommand}"
-                         BackgroundColor="#40739e"
-                         CommandParameter="{Binding Answers[0]}"
-                         
-                         HorizontalOptions="FillAndExpand"/>
+                            </FormattedString>
 
-                        <Button Margin="40,0,40,0" 
-                         TextColor="White" 
-                         Text="{Binding Answers[1]}"
-                         CornerRadius="15"
-                         Font="16"
-                         Command="{Binding AnswerCommand}"
-                         CommandParameter="{Binding Answers[1]}"
-                         BackgroundColor="#40739e"
-                         HorizontalOptions="FillAndExpand"/>
+                        </Label.FormattedText>
+                        
+                    </Label>
 
-                    <Button Margin="40,0,40,0" 
-                         TextColor="White" 
-                         Text="{Binding Answers[2]}"
-                         Font="16"
-                            CornerRadius="15"
-                         Command="{Binding AnswerCommand}"
-                         CommandParameter="{Binding Answers[2]}"
-                         BackgroundColor="#40739e"
-                         HorizontalOptions="FillAndExpand"/>
+                    <Button Margin="40,0,40,0" TextColor="White" Text="{Binding Answers[0]}" Font="16" CornerRadius="15" Command="{Binding AnswerCommand}" BackgroundColor="#40739e" CommandParameter="{Binding Answers[0]}" HorizontalOptions="FillAndExpand"/>
 
-                    <Button Margin="40,0,40,0" 
-                         TextColor="White" 
-                         Text="{Binding Answers[3]}"
-                         Font="16"
-                            CornerRadius="15"
-                         Command="{Binding AnswerCommand}"
-                         CommandParameter="{Binding Answers[3]}"
-                         BackgroundColor="#40739e"
-                         HorizontalOptions="FillAndExpand"/>
+                    <Button Margin="40,0,40,0" TextColor="White" Text="{Binding Answers[1]}" CornerRadius="15" Font="16" Command="{Binding AnswerCommand}" CommandParameter="{Binding Answers[1]}" BackgroundColor="#40739e" HorizontalOptions="FillAndExpand"/>
 
-                       
+                    <Button Margin="40,0,40,0" TextColor="White" Text="{Binding Answers[2]}" Font="16" CornerRadius="15" Command="{Binding AnswerCommand}" CommandParameter="{Binding Answers[2]}" BackgroundColor="#40739e" HorizontalOptions="FillAndExpand"/>
 
-                        <Button Margin="20,10,20,0" 
-                         TextColor="White" 
-                         Text="I don't know the answer!"
-                                CornerRadius="15"
-                         Command="{Binding PlayCommand}"
-                         BackgroundColor="#273c75"
-                         HorizontalOptions="FillAndExpand"
-                         VerticalOptions="End"/>
+                    <Button Margin="40,0,40,0" TextColor="White" Text="{Binding Answers[3]}" Font="16" CornerRadius="15" Command="{Binding AnswerCommand}" CommandParameter="{Binding Answers[3]}" BackgroundColor="#40739e" HorizontalOptions="FillAndExpand"/>
 
-                    <Button Margin="20,10,20,0" 
-                         TextColor="White" 
-                         Text="Edit!"
-                 
-                         CornerRadius="15"
-                         Command="{Binding MainEditorCommand}"
-                                 IsEnabled="{Binding Click}"
-                            BackgroundColor="#273c75"
-                         HorizontalOptions="FillAndExpand"
-                         VerticalOptions="End"/>
+                    <Button Margin="20,10,20,0" TextColor="White" Text="I don't know the answer!" CornerRadius="15" Command="{Binding PlayCommand}" BackgroundColor="#273c75" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
+
+                    <Button Margin="20,10,20,0" TextColor="White" Text="Edit!" CornerRadius="15" Command="{Binding MainEditorCommand}" IsEnabled="{Binding Click}" BackgroundColor="#273c75" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
 
                     <Frame CornerRadius="0" Padding="14" BackgroundColor="#e1b12c">
-                        <Label HeightRequest="35" TextColor="Black" 
-                          FontSize="30" 
-                          HorizontalTextAlignment="Center"
-                          VerticalTextAlignment="End">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text=" Score: " />
-                                <Span Text="{Binding Score}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                        </Frame>
+
+                        <Label HeightRequest="35" TextColor="Black" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="End">
+
+                            <Label.FormattedText>
+
+                                <FormattedString>
+
+                                    <Span Text=" Score: " />
+                                    <Span Text="{Binding Score}" />
+
+                                </FormattedString>
+
+                            </Label.FormattedText>
+
+                        </Label>
+
+                    </Frame>
 
                 </StackLayout>
-                </ScrollView>
+
+            </ScrollView>
 
         </StackLayout>
+
     </ContentPage.Content>
+
 </ContentPage>

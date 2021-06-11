@@ -9,33 +9,37 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        
+
         <ScrollView>
-            
+
             <StackLayout Spacing="2.5">
 
-                <Label Text="Sign Up!" FontSize="35" Padding="80,20"
-                 
-                HorizontalOptions="Center" TextColor="#f7f1e3" />
+                <Label Text="Sign Up!" FontSize="35" Padding="80,20" HorizontalOptions="Center" TextColor="#f7f1e3" />
 
                 <Frame CornerRadius="0" Padding="5" Margin="0,60" BackgroundColor="#cc8e35">
+                   
                     <Entry Placeholder="Email" FontSize="20" Opacity="0.7" Text="{Binding Email}" HorizontalTextAlignment="Center" MaxLength="30" Keyboard="Chat" Margin="80,20" PlaceholderColor="Wheat"/>
+                
                 </Frame>
+
                 <Frame CornerRadius="0" Padding="10" Margin="0,-85" BackgroundColor="#cc8e35">
 
                     <Entry Placeholder="NickName" FontSize="20" Opacity="0.7" Text="{Binding NickName}" HorizontalTextAlignment="Center" MaxLength="30" Keyboard="Email" Margin="80,20" PlaceholderColor="Wheat"/>
+                
                 </Frame>
+                
                 <Frame CornerRadius="0" Padding="10" Margin="0,60" BackgroundColor="#cc8e35">
 
                     <Entry Placeholder="Password" FontSize="20" Opacity="0.7" Text="{Binding Pass}" HorizontalTextAlignment="Center" MaxLength="10" Keyboard="Chat" Margin="80,20" PlaceholderColor="Wheat" IsPassword="True"/>
+              
                 </Frame>
 
                 <Button x:Name="Submit" Margin="80,10,80,0" TextColor="White" BackgroundColor="#4bcffa" CornerRadius="15" FontSize="15" Command="{Binding SignUpCommand}" Text="Sign Up!" />
 
             </StackLayout>
-            
+
         </ScrollView>
-        
+
     </ContentPage.Content>
-    
+
 </ContentPage>

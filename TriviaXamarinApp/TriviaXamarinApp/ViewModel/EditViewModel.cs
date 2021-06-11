@@ -13,9 +13,8 @@ using TriviaXamarinApp.Views;
 
 namespace TriviaXamarinApp.ViewModel
 {
-    class EditViewModel:ViewModelBase
+    class EditViewModel : ViewModelBase
     {
-        
         public event Action<Page> Push;
 
         public EditViewModel(AmericanQuestion q)
